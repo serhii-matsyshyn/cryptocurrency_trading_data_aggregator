@@ -15,6 +15,13 @@ cat schema_creation.cql | sudo docker exec -i cassandra1 cqlsh
 python3 ws_live_data_retrieve_service.py
 ```
 
+### sheduled_report_compute_service
+```shell
+cd sheduled_report_compute_service
+docker-compose -f docker-compose-mongodb-spark.yml up
+python3 sheduled_report_compute_service.py
+```
+
 ## REST API
 The following REST APIs are available:  
 
