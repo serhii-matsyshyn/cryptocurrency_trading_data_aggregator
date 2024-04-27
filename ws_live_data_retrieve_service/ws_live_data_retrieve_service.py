@@ -6,14 +6,14 @@ import ujson as json
 import websockets
 from cassandra.policies import DCAwareRoundRobinPolicy, HostDistance
 from cassandra.query import BatchStatement
+from cassandra.cluster import Cluster
+from cassandra.auth import PlainTextAuthProvider
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 
-from cassandra.cluster import Cluster
-from cassandra.auth import PlainTextAuthProvider
 
 # Cassandra connection details
 CASSANDRA_CONTACT_POINTS = ['localhost']
