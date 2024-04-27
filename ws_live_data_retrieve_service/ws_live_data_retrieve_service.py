@@ -4,6 +4,7 @@ import logging
 import pandas as pd
 import ujson as json
 import websockets
+from cassandra.policies import DCAwareRoundRobinPolicy, HostDistance
 from cassandra.query import BatchStatement
 
 # Configure logging
@@ -18,16 +19,28 @@ from cassandra.auth import PlainTextAuthProvider
 CASSANDRA_CONTACT_POINTS = ['localhost']
 CASSANDRA_USERNAME = 'cassandra'
 CASSANDRA_PASSWORD = 'cassandra'
-CASSANDRA_KEYSPACE = 'crypto_project'
 
 
 class CryptoSpotExchangeWsAsync:
-    def __init__(self):
-        self.uri = "wss://ws.bitmex.com/realtime?subscribe=tradeBin1m,quote"  # tradeBin1m,quote
+    def __init__(self,
+                 uri='wss://ws.bitmex.com/realtime?subscribe=tradeBin1m,quote',  # tradeBin1m,quote
+                 cassandra_keyspace='crypto_project'):
+        self.uri = uri
+        self.cassandra_keyspace = cassandra_keyspace
 
-        # self.auth_provider = PlainTextAuthProvider(username=CASSANDRA_USERNAME, password=CASSANDRA_PASSWORD)
-        # self.cluster = Cluster(contact_points=CASSANDRA_CONTACT_POINTS, auth_provider=self.auth_provider)
-        # self.session = self.cluster.connect(keyspace=CASSANDRA_KEYSPACE)
+        self.auth_provider = PlainTextAuthProvider(username=CASSANDRA_USERNAME, password=CASSANDRA_PASSWORD)
+        self.cluster = Cluster(contact_points=CASSANDRA_CONTACT_POINTS, auth_provider=self.auth_provider,
+                               load_balancing_policy=DCAwareRoundRobinPolicy(local_dc='datacenter1'),
+                               protocol_version=3)
+        self.session = self.cluster.connect(keyspace=self.cassandra_keyspace)
+
+    async def check_cassandra_minute_already_present(self, timestamp, symbol):
+        query = "SELECT * FROM tradeBin1m WHERE timestamp = %s AND symbol = %s"
+        result = self.session.execute(query, (timestamp, symbol))
+
+        logger.debug(result)
+
+        return result
 
     async def insert_cassandra_tradeBin1m(self, data):
         batch = BatchStatement()
@@ -41,7 +54,7 @@ class CryptoSpotExchangeWsAsync:
             close_price = trade['close']
             trades = trade['trades']
             volume = trade['volume']
-            last_size = trade['lastSize']
+            last_size = trade.get('lastSize', 0)
             turnover = trade['turnover']
             home_notional = trade['homeNotional']
             foreign_notional = trade['foreignNotional']
@@ -88,11 +101,22 @@ class CryptoSpotExchangeWsAsync:
                 # 'delete'  - delete row
                 data = message['data']
                 if action == 'partial':
-                    pass
-                    # TODO: insert bulk.
-                    #  quote is safe, tradeBin1m - need to check if not already present
+                    if table == 'tradeBin1m':
+                        if len(data) > 0:
+                            timestamp = pd.Timestamp(data[0]['timestamp']).to_pydatetime()
+                            symbol = data[0]['symbol']
+                            result = await self.check_cassandra_minute_already_present(timestamp, symbol)
+                            if result:
+                                logger.info("Data already present in Cassandra.")
+                                return
+                        await self.insert_cassandra_tradeBin1m(data)
+                    elif table == 'quote':
+                        await self.insert_cassandra_quote(data)
                 elif action == 'insert':
-                    pass
+                    if table == 'tradeBin1m':
+                        await self.insert_cassandra_tradeBin1m(data)
+                    elif table == 'quote':
+                        await self.insert_cassandra_quote(data)
 
         except Exception as err:
             logger.error(str(err))
