@@ -8,6 +8,8 @@ services:
     container_name: cassandra1
     environment:
       - CASSANDRA_SEEDS=cassandra1,cassandra2,cassandra3
+      - HEAP_NEWSIZE=128M
+      - MAX_HEAP_SIZE=2048M
     networks:
       - nw
     ports:
@@ -23,6 +25,8 @@ services:
     container_name: cassandra2
     environment:
       - CASSANDRA_SEEDS=cassandra1,cassandra2,cassandra3
+      - HEAP_NEWSIZE=128M
+      - MAX_HEAP_SIZE=2048M
     networks:
       - nw
     depends_on:
@@ -39,6 +43,8 @@ services:
     container_name: cassandra3
     environment:
       - CASSANDRA_SEEDS=cassandra1,cassandra2,cassandra3
+      - HEAP_NEWSIZE=128M
+      - MAX_HEAP_SIZE=2048M
     networks:
       - nw
     depends_on:
