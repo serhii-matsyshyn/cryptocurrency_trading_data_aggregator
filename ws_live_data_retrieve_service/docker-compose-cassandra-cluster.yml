@@ -50,21 +50,21 @@ services:
       timeout: 10s
       retries: 5
 
-  server_webapp:
-    image: server:latest
-    container_name: server
-    build:
-      context: .
-      dockerfile: Dockerfile
-    networks:
-      - nw
-    ports:
-      - 8080:8080
-    restart: always
-    depends_on:
-      cassandra1:
-        condition: service_healthy
-      cassandra2:
-        condition: service_healthy
-      cassandra3:
-        condition: service_healthy
+#  server_webapp:
+#    image: server:latest
+#    container_name: server
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+#    networks:
+#      - nw
+#    ports:
+#      - 8080:8080
+#    restart: always
+#    depends_on:
+#      cassandra1:
+#        condition: service_healthy
+#      cassandra2:
+#        condition: service_healthy
+#      cassandra3:
+#        condition: service_healthy

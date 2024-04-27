@@ -11,6 +11,7 @@ Author: Serhii Matsyshyn (https://github.com/serhii-matsyshyn) <br>
 ```shell
 cd ws_live_data_retrieve_service
 sudo docker-compose -f docker-compose-cassandra-cluster.yml up
+cat schema_creation.cql | sudo docker exec -i cassandra1 cqlsh
 python3 ws_live_data_retrieve_service.py
 ```
 

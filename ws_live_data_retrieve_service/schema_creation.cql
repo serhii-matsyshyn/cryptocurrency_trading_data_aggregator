@@ -1,5 +1,7 @@
 CREATE KEYSPACE IF NOT EXISTS crypto_project WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 3};
 
+USE crypto_project;
+
 CREATE TABLE IF NOT EXISTS tradeBin1m (
     timestamp TIMESTAMP,
     symbol TEXT,
@@ -7,7 +9,7 @@ CREATE TABLE IF NOT EXISTS tradeBin1m (
     high DOUBLE,
     low DOUBLE,
     close DOUBLE,
-    trades INT,
+    trades BIGINT,
     volume DOUBLE,
     lastSize DOUBLE,
     turnover DOUBLE,
@@ -19,10 +21,10 @@ CREATE TABLE IF NOT EXISTS tradeBin1m (
 CREATE TABLE IF NOT EXISTS quote (
     timestamp TIMESTAMP,
     symbol TEXT,
-    bidSize INT,
+    bidSize BIGINT,
     bidPrice DOUBLE,
     askPrice DOUBLE,
-    askSize INT,
+    askSize BIGINT,
     PRIMARY KEY (timestamp, symbol)
 );
 
