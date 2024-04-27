@@ -46,6 +46,9 @@ class CryptoSpotExchangeWsAsync:
         batch = BatchStatement()
 
         for trade in data:
+            if trade['symbol'][0] == '.':
+                # This is index value, not a cryptocurrency, no need to store
+                continue
             timestamp = pd.Timestamp(trade['timestamp']).to_pydatetime()
             symbol = trade['symbol']
             open_price = trade['open']
