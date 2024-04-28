@@ -1,0 +1,39 @@
+# Part A
+
+###
+#1. Return the aggregated statistics containing the number of transactions for each cryptocurrency for each hour in the last 6 hours, excluding the previous hour.
+
+GET http://localhost:8000/precomputed_report_data/hourly_transactions
+
+
+###
+#2.1. Return the statistics about the total trading volume for each cryptocurrency for the last 6 hours, excluding the previous hour.
+# By volume type - foreignNotional
+
+GET http://localhost:8000/precomputed_report_data/total_volume?volume_type=foreignNotional
+
+###
+
+###
+#2.2. Return the statistics about the total trading volume for each cryptocurrency for the last 6 hours, excluding the previous hour.
+# By volume type - homeNotional
+
+GET http://localhost:8000/precomputed_report_data/total_volume?volume_type=homeNotional
+
+###
+#3.1. Return aggregated statistics containing the number of trades and their total volume for each hour in the last 12 hours, excluding the current hour.
+# By volume type - foreignNotional
+
+GET http://localhost:8000/precomputed_report_data/hourly_trades_volume?volume_type=foreignNotional
+
+###
+#3.2. Return aggregated statistics containing the number of trades and their total volume for each hour in the last 12 hours, excluding the current hour.
+# By volume type - homeNotional
+
+GET http://localhost:8000/precomputed_report_data/hourly_trades_volume?volume_type=homeNotional
+
+###
+
+# Part B
+
+###
