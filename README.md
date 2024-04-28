@@ -32,7 +32,9 @@ python3 precomputed_report_data_retrieve_controller.py
 ```shell
 cd live_data_retrieve_service
 docker-compose -f docker-compose-hazelcast.yml up
-python3 live_data_retrieve_controller.py
+python3 live_data_retrieve_controller.py -p 8004
+python3 live_data_retrieve_controller.py -p 8005
+python3 live_data_retrieve_controller.py -p 8006
 ```
 
 ### facade_service
@@ -62,7 +64,7 @@ Part B: A set of REST APIs that will return the results of ad-hoc queries. User 
 - sheduled_report_compute_service: 8001
 - precomputed_report_data_retrieve_service: 8002
 - ws_live_data_retrieve_service: 8003
-- live_data_retrieve_service: 8004
+- live_data_retrieve_service: 8004 - 8006
 and other services ports
 - Hazelcast: 5701
 - Hazelcast Management Center: 8180
