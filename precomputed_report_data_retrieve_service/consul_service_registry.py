@@ -27,6 +27,6 @@ class ConsulServiceRegistry:
 
     def get_config(self, name):
         settings = self.consul.kv.get(name)
-        if settings:
+        if settings and settings[1]:
             return settings[1]['Value'].decode("utf-8")
         return None
