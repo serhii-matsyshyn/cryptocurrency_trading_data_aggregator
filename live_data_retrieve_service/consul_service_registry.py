@@ -4,6 +4,7 @@ import consul
 class ConsulServiceRegistry:
     def __init__(self, consul_host='localhost', consul_port=8500):
         self.consul = consul.Consul(host=consul_host, port=consul_port)
+        self.service_id = None
 
     def register_service(self, service_name, service_address, service_port):
         self.service_id = f"{service_name}-{service_address}-{service_port}"
