@@ -48,6 +48,9 @@ class LiveDataRetrieveService:
                 try:
                     json_data = json.loads(data)
                     logger.info(f"Consuming {json_data}")
+                    if volume_type := json_data.get('volume_type'):
+                        if volume_type not in ('homeNotional', 'foreignNotional', 'volume'):
+                            raise ValueError(f"Invalid volume_type: {volume_type}")
                     if json_data['type'] == 'sum_trades_last_n_minutes':
                         result = self.sum_trades_last_n_minutes(json_data['symbol'], int(json_data['n_minutes']))
                         logger.info(f"Result: {result}")
@@ -63,6 +66,10 @@ class LiveDataRetrieveService:
                     self.client.get_topic(json_data['topic']).publish(json.dumps(result, default=self.default))
                 except Exception as e:
                     logger.error(f"Error consuming message: {e}")
+                    try:
+                        self.client.get_topic(json_data['topic']).publish(json.dumps({'error': str(e)}, default=self.default))
+                    except:
+                        pass
 
     def __del__(self):
         self.consul.deregister_service()

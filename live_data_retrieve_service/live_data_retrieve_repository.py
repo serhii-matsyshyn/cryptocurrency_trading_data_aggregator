@@ -63,20 +63,20 @@ class LiveDataRetrieveRepository:
         if isinstance(o, (datetime.date, datetime.datetime)):
             return o.isoformat()
 
-    def check_and_get_if_cached(self, name, start_timestamp, end_timestamp, symbol, n):
+    def check_and_get_if_cached(self, name, start_timestamp, end_timestamp, symbol, n, volume_type=None):
         if name == 'sum_trades_last_n_minutes':
             logger.debug(f"Checking cache for {symbol}_{n}_{start_timestamp}_{end_timestamp}")
             result = self.hz_sum_trades_last_n_minutes_map.get(f"{symbol}_{n}_{start_timestamp}_{end_timestamp}")
         elif name == 'top_n_cryptos_last_hour':
-            logger.debug(f"Checking cache for {n}_{start_timestamp}_{end_timestamp}")
-            result = self.hz_top_n_cryptos_last_hour_map.get(f"{n}_{start_timestamp}_{end_timestamp}")
+            logger.debug(f"Checking cache for {n}_{start_timestamp}_{end_timestamp}_{volume_type}")
+            result = self.hz_top_n_cryptos_last_hour_map.get(f"{n}_{start_timestamp}_{end_timestamp}_{volume_type}")
         else:
             raise ValueError(f"Invalid name for check_and_get_if_cached: {name}")
 
         logger.debug(f"Cache result loaded from Hazelcast: {result}")
         return json.loads(result) if result else None
 
-    def cache_result(self, name, start_timestamp, end_timestamp, symbol, n, result):
+    def cache_result(self, name, start_timestamp, end_timestamp, symbol, n, result, volume_type=None):
         if name == 'sum_trades_last_n_minutes':
             logger.debug(f"Caching {symbol}_{n}_{start_timestamp}_{end_timestamp}")
             self.hz_sum_trades_last_n_minutes_map.put(
@@ -84,9 +84,9 @@ class LiveDataRetrieveRepository:
                 json.dumps(result, default=self.default)
             )
         elif name == 'top_n_cryptos_last_hour':
-            logger.debug(f"Caching {n}_{start_timestamp}_{end_timestamp}")
+            logger.debug(f"Caching {n}_{start_timestamp}_{end_timestamp}_{volume_type}")
             self.hz_top_n_cryptos_last_hour_map.put(
-                f"{n}_{start_timestamp}_{end_timestamp}",
+                f"{n}_{start_timestamp}_{end_timestamp}_{volume_type}",
                 json.dumps(result, default=self.default)
             )
         else:
@@ -124,7 +124,7 @@ class LiveDataRetrieveRepository:
             'end_timestamp': end_timestamp
         }
 
-        self.cache_result('sum_trades_last_n_minutes', start_timestamp, end_timestamp, symbol, n_minutes, result)
+        self.cache_result('sum_trades_last_n_minutes', start_timestamp, end_timestamp, symbol, n_minutes, result=result)
         return result
 
     def top_n_cryptos_last_hour(self, n, volume_type='foreignNotional'):
@@ -135,7 +135,7 @@ class LiveDataRetrieveRepository:
                 'top_n_cryptos_last_hour',
                 start_timestamp,
                 end_timestamp,
-                None, n):
+                None, n, volume_type):
             logger.info(f"Returning cached result for top {n} cryptos from {start_timestamp} to {end_timestamp}")
             return cached_result
 
@@ -163,7 +163,7 @@ class LiveDataRetrieveRepository:
             'end_timestamp': end_timestamp
         }
 
-        self.cache_result('top_n_cryptos_last_hour', start_timestamp, end_timestamp, None, n, result)
+        self.cache_result('top_n_cryptos_last_hour', start_timestamp, end_timestamp, None, n, result=result, volume_type=volume_type)
         return result
 
 

@@ -20,11 +20,15 @@ async def get_hourly_transactions():
 
 @app.get("/total_volume")
 async def get_total_volume(volume_type: str = Query("foreignNotional")):
+    if volume_type not in ("foreignNotional", "homeNotional"):
+        return {"error": f"Invalid volume_type: {volume_type}"}
     return precomputed_report_data_retrieve_service.get_total_volume(volume_type=volume_type)
 
 
 @app.get("/hourly_trades_volume")
 async def get_hourly_trades_volume(volume_type: str = Query("foreignNotional")):
+    if volume_type not in ("foreignNotional", "homeNotional"):
+        return {"error": f"Invalid volume_type: {volume_type}"}
     return precomputed_report_data_retrieve_service.get_hourly_trades_volume(volume_type=volume_type)
 
 
