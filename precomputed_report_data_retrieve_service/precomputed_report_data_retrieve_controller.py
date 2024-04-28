@@ -13,17 +13,17 @@ consul = ConsulServiceRegistry()
 precomputed_report_data_retrieve_service = PrecomputedReportDataRetrieveService(consul=consul)
 
 
-@app.get("/hourly_transactions/")
+@app.get("/hourly_transactions")
 async def get_hourly_transactions():
     return precomputed_report_data_retrieve_service.get_hourly_transactions()
 
 
-@app.get("/total_volume/")
+@app.get("/total_volume")
 async def get_total_volume(volume_type: str = Query("foreignNotional")):
     return precomputed_report_data_retrieve_service.get_total_volume(volume_type=volume_type)
 
 
-@app.get("/hourly_trades_volume/")
+@app.get("/hourly_trades_volume")
 async def get_hourly_trades_volume(volume_type: str = Query("foreignNotional")):
     return precomputed_report_data_retrieve_service.get_hourly_trades_volume(volume_type=volume_type)
 
