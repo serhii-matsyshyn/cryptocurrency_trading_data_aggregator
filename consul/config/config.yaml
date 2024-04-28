@@ -10,3 +10,7 @@ cassandra:
       - username: cassandra
       - password: cassandra
   - keyspace: crypto_project
+
+mongodb:
+  - uri: mongodb://localhost:27017/
+  - database: crypto_statistics

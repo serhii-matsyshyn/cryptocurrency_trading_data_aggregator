@@ -23,3 +23,6 @@ class PrecomputedReportDataRetrieveService:
     def get_hourly_trades_volume(self, volume_type: str):
         data = self.repository.get_hourly_trades_volume(volume_type=volume_type)
         return {"report_date": data["report_date"], 'report_name': f"hourly_trades_volume_{volume_type}", "data": data["data"]}
+
+    def __del__(self):
+        self.consul.deregister_service()

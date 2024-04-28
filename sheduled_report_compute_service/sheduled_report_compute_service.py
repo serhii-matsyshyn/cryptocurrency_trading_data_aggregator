@@ -6,6 +6,8 @@ from pymongo import MongoClient
 from apscheduler.schedulers.background import BackgroundScheduler
 import pandas as pd
 
+from consul_service_registry import ConsulServiceRegistry
+
 pd.set_option('display.min_rows', 1000)
 pd.set_option('display.max_rows', 1000)
 
@@ -16,15 +18,16 @@ logger.setLevel(logging.DEBUG)
 
 
 class CryptoStatistics:
-    def __init__(self):
+    def __init__(self, consul):
+        self.consul = consul
         self.spark = SparkSession.builder \
             .appName("CryptoStatistics") \
             .config('spark.jars.packages', "com.datastax.spark:spark-cassandra-connector_2.12:3.5.0") \
-            .config("spark.cassandra.connection.host", "localhost") \
+            .config("spark.cassandra.connection.host", self.consul.get_config("cassandra/contact_point")) \
             .getOrCreate()
 
-        self.client = MongoClient('mongodb://localhost:27017/')
-        self.db = self.client['crypto_statistics']
+        self.client = MongoClient(self.consul.get_config("mongodb/uri"))
+        self.db = self.client[self.consul.get_config("mongodb/database")]
 
         # self.compute_and_save_statistics()
         self.scheduler = BackgroundScheduler()
@@ -48,7 +51,7 @@ class CryptoStatistics:
     def load_data_from_cassandra(self):
         df = self.spark.read \
             .format("org.apache.spark.sql.cassandra") \
-            .options(table="tradebin1m", keyspace="crypto_project") \
+            .options(table="tradebin1m", keyspace=consul.get_config("cassandra/keyspace")) \
             .load()
         return df
 
@@ -109,9 +112,16 @@ class CryptoStatistics:
 
             collection.insert_one(data)
 
+    def __del__(self):
+        self.spark.stop()
+        self.scheduler.shutdown()
+        self.client.close()
+        self.consul.deregister_service()
+
 
 if __name__ == "__main__":
-    crypto_statistics = CryptoStatistics()
+    consul = ConsulServiceRegistry()
+    crypto_statistics = CryptoStatistics(consul=consul)
     try:
         while True:
             time.sleep(2)
