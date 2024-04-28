@@ -18,6 +18,11 @@ async def get_precomputed_report_data(report_name: str, request: Request):
     return facade_service.get_precomputed_report_data(report_name, dict(request.query_params))
 
 
+@app.get("/live_data/{report_name}")
+async def get_live_data(report_name: str, request: Request):
+    return facade_service.get_live_data(report_name, dict(request.query_params))
+
+
 if __name__ == "__main__":
     import uvicorn
 

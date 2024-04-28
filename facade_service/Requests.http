@@ -37,3 +37,23 @@ GET http://localhost:8000/precomputed_report_data/hourly_trades_volume?volume_ty
 # Part B
 
 ###
+#1. Return the number of trades processed in a specific cryptocurrency in the last N minutes, excluding the last minute.
+
+GET http://localhost:8000/live_data/sum_trades_last_n_minutes?symbol=XBTUSD&n_minutes=5
+
+###
+#2.1. Return the top N cryptocurrencies with the highest trading volume in the last hour.
+# By volume type - foreignNotional
+
+GET http://localhost:8000/live_data/top_n_cryptos_last_hour?n=5&volume_type=foreignNotional
+
+###
+#2.2. Return the top N cryptocurrencies with the highest trading volume in the last hour.
+# By volume type - homeNotional
+
+GET http://localhost:8000/live_data/top_n_cryptos_last_hour?n=5&volume_type=homeNotional
+
+###
+#3. Return the cryptocurrency’s current price for «Buy» - bidPrice and «Sell» - askPrice sides based on its symbol.
+
+GET http://localhost:8000/live_data/get_latest_prices?symbol=XBTUSD
