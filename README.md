@@ -34,3 +34,9 @@ Part B: A set of REST APIs that will return the results of ad-hoc queries. User 
 1. Return the number of trades processed in a specific cryptocurrency in the last N minutes, excluding the last minute.
 2. Return the top N cryptocurrencies with the highest trading volume in the last hour.
 3. Return the cryptocurrency’s current price for «Buy» and «Sell» sides based on its symbol.
+
+## Services ports
+- facade_service: 8000
+- sheduled_report_compute_service: 8001
+- precomputed_report_data_retrieve_service: 8002
+- ws_live_data_retrieve_service: 8003
