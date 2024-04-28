@@ -35,5 +35,5 @@ async def get_hourly_trades_volume(volume_type: str = Query("foreignNotional")):
 if __name__ == "__main__":
     import uvicorn
 
-    # consul.register_service("facade_service", "127.0.0.1", 8002)
+    consul.register_service("precomputed_report_data_retrieve_service", "127.0.0.1", 8002)
     uvicorn.run(app, host="127.0.0.1", port=8002)

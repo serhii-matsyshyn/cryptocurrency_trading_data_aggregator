@@ -26,5 +26,5 @@ async def get_live_data(report_name: str, request: Request):
 if __name__ == "__main__":
     import uvicorn
 
-    # consul.register_service("facade_service", "127.0.0.1", 8000)
+    consul.register_service("facade_service", "127.0.0.1", 8000)
     uvicorn.run(app, host="127.0.0.1", port=8000)
