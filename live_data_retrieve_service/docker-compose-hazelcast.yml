@@ -5,6 +5,12 @@ services:
       - "5701:5701"
     environment:
       - HZ_QUEUE_QUEUE_MAXSIZE=100
+      # Limit map
+      - HZ_MAP_DEFAULT_TIMETOLIVESECONDS=3600
+      - HZ_MAP_DEFAULT_MAXIDLESECONDS=3600
+      - HZ_MAP_DEFAULT_EVICTION_EVICTIONPOLICY=LRU
+      - HZ_MAP_DEFAULT_EVICTION_MAXSIZEPOLICY=PER_NODE
+      - HZ_MAP_DEFAULT_EVICTION_SIZE=5000
 
   management-center:
     image: hazelcast/management-center:latest

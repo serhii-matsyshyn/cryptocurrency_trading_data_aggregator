@@ -1,6 +1,9 @@
+import json
 import logging
-from datetime import datetime, timedelta
+import datetime
+from datetime import timedelta
 
+import hazelcast
 from cassandra.policies import DCAwareRoundRobinPolicy, HostDistance
 from cassandra.cluster import Cluster
 from cassandra.auth import PlainTextAuthProvider
@@ -9,7 +12,6 @@ from cassandra.auth import PlainTextAuthProvider
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
-
 
 # Cassandra connection details
 CASSANDRA_CONTACT_POINTS = ['localhost']
@@ -28,6 +30,12 @@ class LiveDataRetrieveRepository:
                                load_balancing_policy=DCAwareRoundRobinPolicy(local_dc='datacenter1'),
                                protocol_version=3)
         self.session = self.cluster.connect(keyspace=self.cassandra_keyspace)
+
+        self.client = hazelcast.HazelcastClient(
+            cluster_name='dev')  # cluster_name=consul.get_config("hazelcast/settings/cluster_name"))
+
+        self.hz_sum_trades_last_n_minutes_map = self.client.get_map("sum_trades_last_n_minutes").blocking()
+        self.hz_top_n_cryptos_last_hour_map = self.client.get_map("top_n_cryptos_last_hour").blocking()
 
     def get_latest_prices(self, symbol):
         query = f"""
@@ -49,9 +57,52 @@ class LiveDataRetrieveRepository:
             }
         return {'symbol': symbol, 'bidPrice': 'N/A', 'askPrice': 'N/A', 'timestamp': 'N/A'}
 
+    @staticmethod
+    def default(o):
+        """Default JSON serializer for dates and datetimes."""
+        if isinstance(o, (datetime.date, datetime.datetime)):
+            return o.isoformat()
+
+    def check_and_get_if_cached(self, name, start_timestamp, end_timestamp, symbol, n):
+        if name == 'sum_trades_last_n_minutes':
+            logger.debug(f"Checking cache for {symbol}_{n}_{start_timestamp}_{end_timestamp}")
+            result = self.hz_sum_trades_last_n_minutes_map.get(f"{symbol}_{n}_{start_timestamp}_{end_timestamp}")
+        elif name == 'top_n_cryptos_last_hour':
+            logger.debug(f"Checking cache for {n}_{start_timestamp}_{end_timestamp}")
+            result = self.hz_top_n_cryptos_last_hour_map.get(f"{n}_{start_timestamp}_{end_timestamp}")
+        else:
+            raise ValueError(f"Invalid name for check_and_get_if_cached: {name}")
+
+        logger.debug(f"Cache result loaded from Hazelcast: {result}")
+        return json.loads(result) if result else None
+
+    def cache_result(self, name, start_timestamp, end_timestamp, symbol, n, result):
+        if name == 'sum_trades_last_n_minutes':
+            logger.debug(f"Caching {symbol}_{n}_{start_timestamp}_{end_timestamp}")
+            self.hz_sum_trades_last_n_minutes_map.put(
+                f"{symbol}_{n}_{start_timestamp}_{end_timestamp}",
+                json.dumps(result, default=self.default)
+            )
+        elif name == 'top_n_cryptos_last_hour':
+            logger.debug(f"Caching {n}_{start_timestamp}_{end_timestamp}")
+            self.hz_top_n_cryptos_last_hour_map.put(
+                f"{n}_{start_timestamp}_{end_timestamp}",
+                json.dumps(result, default=self.default)
+            )
+        else:
+            raise ValueError(f"Invalid name for cache_result: {name}")
+
     def sum_trades_last_n_minutes(self, symbol, n_minutes):
-        end_timestamp = datetime.utcnow().replace(second=0, microsecond=0)
+        end_timestamp = datetime.datetime.utcnow().replace(second=0, microsecond=0)
         start_timestamp = end_timestamp - timedelta(minutes=n_minutes)
+
+        if cached_result := self.check_and_get_if_cached(
+                'sum_trades_last_n_minutes',
+                start_timestamp,
+                end_timestamp,
+                symbol, n_minutes):
+            logger.info(f"Returning cached result for {symbol} from {start_timestamp} to {end_timestamp}")
+            return cached_result
 
         query = f"""
             SELECT SUM(trades) AS total_trades
@@ -62,20 +113,31 @@ class LiveDataRetrieveRepository:
             ALLOW FILTERING
         """
 
-        result = self.session.execute(query)
+        query_result = self.session.execute(query)
         total_trades = 0
-        if result:
-            total_trades = result.one().total_trades
-        return {
+        if query_result:
+            total_trades = query_result.one().total_trades
+        result = {
             'symbol': symbol,
             'total_trades': total_trades,
             'start_timestamp': start_timestamp,
             'end_timestamp': end_timestamp
         }
 
+        self.cache_result('sum_trades_last_n_minutes', start_timestamp, end_timestamp, symbol, n_minutes, result)
+        return result
+
     def top_n_cryptos_last_hour(self, n, volume_type='foreignNotional'):
-        end_timestamp = datetime.utcnow().replace(second=0, microsecond=0)
+        end_timestamp = datetime.datetime.utcnow().replace(second=0, microsecond=0)
         start_timestamp = end_timestamp - timedelta(hours=1)
+
+        if cached_result := self.check_and_get_if_cached(
+                'top_n_cryptos_last_hour',
+                start_timestamp,
+                end_timestamp,
+                None, n):
+            logger.info(f"Returning cached result for top {n} cryptos from {start_timestamp} to {end_timestamp}")
+            return cached_result
 
         query = f"""
             SELECT symbol, SUM({volume_type}) AS total_volume
@@ -86,20 +148,23 @@ class LiveDataRetrieveRepository:
             ALLOW FILTERING
         """
 
-        result = self.session.execute(query)
+        query_result = self.session.execute(query)
 
         top_cryptos = []
-        for row in result:
+        for row in query_result:
             top_cryptos.append((row.symbol, row.total_volume))
 
         top_cryptos = sorted(top_cryptos, key=lambda x: x[1], reverse=True)[:n]
 
-        return {
+        result = {
             'top_cryptos': {symbol: total_volume for symbol, total_volume in top_cryptos},
             'volume_type': volume_type,
             'start_timestamp': start_timestamp,
             'end_timestamp': end_timestamp
         }
+
+        self.cache_result('top_n_cryptos_last_hour', start_timestamp, end_timestamp, None, n, result)
+        return result
 
 
 if __name__ == '__main__':

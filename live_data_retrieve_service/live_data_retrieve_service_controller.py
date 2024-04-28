@@ -1,3 +1,4 @@
+import argparse
 import logging
 from fastapi import FastAPI, Query, Request
 
@@ -21,5 +22,9 @@ async def health():
 if __name__ == '__main__':
     import uvicorn
 
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-p", "--port", type=int, help="Specify the port number", default=8004)
+    args = parser.parse_args()
+
     # consul.register_service("facade_service", "127.0.0.1", 8000)
-    uvicorn.run(app, host="127.0.0.1", port=8004)
+    uvicorn.run(app, host="127.0.0.1", port=args.port)
