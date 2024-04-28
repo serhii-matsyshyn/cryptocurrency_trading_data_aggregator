@@ -100,7 +100,7 @@ class CryptoStatistics:
         for key, value in result.items():
             collection = self.db[key]
             data = {
-                "report_date": pd.Timestamp.now(),
+                "report_date": pd.Timestamp.utcnow(),
                 "data": value.to_dict(orient='records')
             }
 
