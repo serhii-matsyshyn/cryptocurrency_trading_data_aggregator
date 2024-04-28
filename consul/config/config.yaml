@@ -1,0 +1,12 @@
+hazelcast:
+  - cluster_name: dev
+  - live_data_queue: queue
+  - sum_trades_last_n_minutes_map: sum_trades_last_n_minutes
+  - top_n_cryptos_last_hour_map: top_n_cryptos_last_hour
+
+cassandra:
+  - contact_point: localhost
+  - credentials:
+      - username: cassandra
+      - password: cassandra
+  - keyspace: crypto_project

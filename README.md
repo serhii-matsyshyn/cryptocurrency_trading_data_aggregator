@@ -7,6 +7,12 @@ Author: Serhii Matsyshyn (https://github.com/serhii-matsyshyn) <br>
 
 ## 🖥 Usage
 
+### consul
+```shell
+cd consul
+sudo docker-compose -f docker-compose-consul.yml up
+```
+
 ### ws_live_data_retrieve_service
 ```shell
 cd ws_live_data_retrieve_service

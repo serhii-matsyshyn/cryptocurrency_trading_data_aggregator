@@ -4,7 +4,7 @@ import datetime
 from datetime import timedelta
 
 import hazelcast
-from cassandra.policies import DCAwareRoundRobinPolicy, HostDistance
+from cassandra.policies import DCAwareRoundRobinPolicy
 from cassandra.cluster import Cluster
 from cassandra.auth import PlainTextAuthProvider
 
@@ -13,29 +13,21 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 
-# Cassandra connection details
-CASSANDRA_CONTACT_POINTS = ['localhost']
-CASSANDRA_USERNAME = 'cassandra'
-CASSANDRA_PASSWORD = 'cassandra'
-
 
 class LiveDataRetrieveRepository:
-    def __init__(self, consul, cassandra_keyspace='crypto_project'):
+    def __init__(self, consul):
         self.consul = consul
 
-        self.cassandra_keyspace = cassandra_keyspace
-
-        self.auth_provider = PlainTextAuthProvider(username=CASSANDRA_USERNAME, password=CASSANDRA_PASSWORD)
-        self.cluster = Cluster(contact_points=CASSANDRA_CONTACT_POINTS, auth_provider=self.auth_provider,
+        self.auth_provider = PlainTextAuthProvider(username=consul.get_config("cassandra/credentials/username"), password=consul.get_config("cassandra/credentials/password"))
+        self.cluster = Cluster(contact_points=[consul.get_config("cassandra/contact_point")], auth_provider=self.auth_provider,
                                load_balancing_policy=DCAwareRoundRobinPolicy(local_dc='datacenter1'),
                                protocol_version=3)
-        self.session = self.cluster.connect(keyspace=self.cassandra_keyspace)
+        self.session = self.cluster.connect(keyspace=consul.get_config("cassandra/keyspace"))
 
-        self.client = hazelcast.HazelcastClient(
-            cluster_name='dev')  # cluster_name=consul.get_config("hazelcast/settings/cluster_name"))
+        self.client = hazelcast.HazelcastClient(cluster_name=consul.get_config("hazelcast/cluster_name"))
 
-        self.hz_sum_trades_last_n_minutes_map = self.client.get_map("sum_trades_last_n_minutes").blocking()
-        self.hz_top_n_cryptos_last_hour_map = self.client.get_map("top_n_cryptos_last_hour").blocking()
+        self.hz_sum_trades_last_n_minutes_map = self.client.get_map(consul.get_config("hazelcast/sum_trades_last_n_minutes_map")).blocking()
+        self.hz_top_n_cryptos_last_hour_map = self.client.get_map(consul.get_config("hazelcast/top_n_cryptos_last_hour_map")).blocking()
 
     def get_latest_prices(self, symbol):
         query = f"""

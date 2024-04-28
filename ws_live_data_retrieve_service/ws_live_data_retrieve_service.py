@@ -139,5 +139,10 @@ class CryptoSpotExchangeWsAsync:
 
 
 if __name__ == "__main__":
-    data_receive_service = CryptoSpotExchangeWsAsync()
-    asyncio.run(data_receive_service.main())
+    while True:
+        try:
+            data_receive_service = CryptoSpotExchangeWsAsync()
+            asyncio.run(data_receive_service.main())
+        except Exception as e:
+            logger.error(e)
+            continue
