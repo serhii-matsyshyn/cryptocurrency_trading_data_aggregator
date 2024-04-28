@@ -22,6 +22,25 @@ docker-compose -f docker-compose-mongodb-spark.yml up
 python3 sheduled_report_compute_service.py
 ```
 
+### precomputed_report_data_retrieve_service
+```shell
+cd precomputed_report_data_retrieve_service
+python3 precomputed_report_data_retrieve_controller.py
+```
+
+### live_data_retrieve_service
+```shell
+cd live_data_retrieve_service
+docker-compose -f docker-compose-hazelcast.yml up
+python3 live_data_retrieve_controller.py
+```
+
+### facade_service
+```shell
+cd facade_service
+python3 facade_controller.py
+```
+
 ## REST API
 The following REST APIs are available:  
 
@@ -36,7 +55,12 @@ Part B: A set of REST APIs that will return the results of ad-hoc queries. User 
 3. Return the cryptocurrency’s current price for «Buy» and «Sell» sides based on its symbol.
 
 ## Services ports
+
 - facade_service: 8000
 - sheduled_report_compute_service: 8001
 - precomputed_report_data_retrieve_service: 8002
 - ws_live_data_retrieve_service: 8003
+- live_data_retrieve_service: 8004
+and other services ports
+- Hazelcast: 5701
+- Hazelcast Management Center: 8180

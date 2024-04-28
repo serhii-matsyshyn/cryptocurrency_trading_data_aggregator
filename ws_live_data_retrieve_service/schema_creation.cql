@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS tradeBin1m (
     turnover DOUBLE,
     homeNotional DOUBLE,
     foreignNotional DOUBLE,
-    PRIMARY KEY (timestamp, symbol)
+    PRIMARY KEY (symbol, timestamp)
 );
 
 CREATE TABLE IF NOT EXISTS quote (
@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS quote (
     bidPrice DOUBLE,
     askPrice DOUBLE,
     askSize BIGINT,
-    PRIMARY KEY (timestamp, symbol)
+    PRIMARY KEY (symbol, timestamp)
 );
 
 
