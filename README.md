@@ -54,6 +54,8 @@ Part B: A set of REST APIs that will return the results of ad-hoc queries. User 
 2. Return the top N cryptocurrencies with the highest trading volume in the last hour.
 3. Return the cryptocurrency’s current price for «Buy» and «Sell» sides based on its symbol.
 
+**You can find example requests [here](facade_service/Requests.http)**
+
 ## Services ports
 
 - facade_service: 8000
@@ -64,3 +66,15 @@ Part B: A set of REST APIs that will return the results of ad-hoc queries. User 
 and other services ports
 - Hazelcast: 5701
 - Hazelcast Management Center: 8180
+
+## 📌 Nota bene
+Project was developed and tested on Ubuntu 22.04.3 LTS.  
+
+### Information on volume type
+The reason for having separate endpoints params (`foreignNotional`, `homeNotional`) is Bitmex's unique method of reporting trading volume. Bitmex doesn't provide a unified volume value in a fixed currency like USD (or BTC); instead, it offers volume data in various forms such as home, foreign, or relative points based on the specific cryptocurrency pairs being traded.
+
+Sorting by volume can present challenges in interpretation. For instance, if using `volume` value (that is, relative points) or `homeNotional`, cryptocurrencies like PEPE with a high number of digits may appear to have a higher volume than BTC, despite BTC being a more widely traded asset. This discrepancy arises due to the differing digit counts in their respective representations (and mixed `volume` representation across pairs).
+
+Using `foreignNotional` as the volume type offers a more stable calculation. This is because most cryptocurrencies on Bitmex are paired with USD-based assets like USD, USDT, or USDC. However, there are exceptions such as BTCETH pairs, which can introduce some complexity.
+
+Unfortunately, it's impractical to split pairs or calculate a relative volume value due to the limitations of Bitmex's data reporting. As a result, separate endpoints params are necessary to provide clarity on trading volume metrics based on different volume types, and still, there are several pairs that will be incorrectly sorted, if their `foreignNotional` is not USD-based.
