@@ -1,0 +1,17 @@
+networks:
+  nw:
+    name: nw
+    driver: bridge
+
+services:
+  precomputed-report-data-retrieve-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - SERVICE_PORT=8002
+    container_name: precomputed-report-data-retrieve-service
+    pull_policy: if_not_present
+    image: precomputed-report-data-retrieve-service
+    networks:
+      - nw

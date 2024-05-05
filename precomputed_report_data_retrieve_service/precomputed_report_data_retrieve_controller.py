@@ -1,4 +1,6 @@
 import logging
+import os
+from socket import gethostname, gethostbyname
 from fastapi import FastAPI, Query
 
 from consul_service_registry import ConsulServiceRegistry
@@ -9,7 +11,7 @@ logger = logging.getLogger(__name__)
 
 app = FastAPI()
 
-consul = ConsulServiceRegistry()
+consul = ConsulServiceRegistry(consul_host="consul-server", consul_port=8500)
 precomputed_report_data_retrieve_service = PrecomputedReportDataRetrieveService(consul=consul)
 
 
@@ -39,5 +41,6 @@ async def health_check():
 if __name__ == "__main__":
     import uvicorn
 
-    consul.register_service("precomputed_report_data_retrieve_service", "127.0.0.1", 8002)
-    uvicorn.run(app, host="127.0.0.1", port=8002)
+    port = int(os.environ.get("SERVICE_PORT"))
+    consul.register_service("precomputed_report_data_retrieve_service", gethostbyname(gethostname()), port)
+    uvicorn.run(app, host=gethostbyname(gethostname()), port=port)
