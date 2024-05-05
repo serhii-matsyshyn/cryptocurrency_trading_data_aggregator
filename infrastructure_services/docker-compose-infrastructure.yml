@@ -1,0 +1,151 @@
+networks:
+  nw:
+    name: nw
+    driver: bridge
+
+services:
+  # Consul service
+  consul-server:
+    image: hashicorp/consul:latest
+    container_name: consul-server
+    restart: unless-stopped
+    volumes:
+      - ./consul-config/server.json:/consul/config/server.json:ro
+    networks:
+      - nw
+    ports:
+      - "8500:8500"
+      - "8600:8600/tcp"
+      - "8600:8600/udp"
+    command: "agent -bind=0.0.0.0"
+
+  # Cassandra cluster
+  cassandra1:
+    image: cassandra:latest
+    container_name: cassandra1
+    restart: unless-stopped
+    environment:
+      - CASSANDRA_SEEDS=cassandra1,cassandra2,cassandra3
+      - HEAP_NEWSIZE=128M
+      - MAX_HEAP_SIZE=2048M
+    networks:
+      - nw
+    ports:
+      - 9042:9042
+    healthcheck:
+      test: [ "CMD-SHELL", "[ $$(nodetool statusgossip) = running ]" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  cassandra2:
+    image: cassandra:latest
+    container_name: cassandra2
+    restart: unless-stopped
+    environment:
+      - CASSANDRA_SEEDS=cassandra1,cassandra2,cassandra3
+      - HEAP_NEWSIZE=128M
+      - MAX_HEAP_SIZE=2048M
+    networks:
+      - nw
+    depends_on:
+      cassandra1:
+        condition: service_healthy
+    healthcheck:
+      test: [ "CMD-SHELL", "[ $$(nodetool statusgossip) = running ]" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  cassandra3:
+    image: cassandra:latest
+    container_name: cassandra3
+    restart: unless-stopped
+    environment:
+      - CASSANDRA_SEEDS=cassandra1,cassandra2,cassandra3
+      - HEAP_NEWSIZE=128M
+      - MAX_HEAP_SIZE=2048M
+    networks:
+      - nw
+    depends_on:
+      cassandra2:
+        condition: service_healthy
+    healthcheck:
+      test: [ "CMD-SHELL", "[ $$(nodetool statusgossip) = running ]" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  # MongoDB
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    restart: unless-stopped
+    networks:
+      - nw
+    ports:
+      - '27017:27017'
+    volumes:
+      - dbdata:/data/db
+
+  # Spark cluster
+  spark-master:
+    image: bitnami/spark:latest
+    container_name: spark-master
+    restart: unless-stopped
+    environment:
+      - SPARK_MODE=master
+    ports:
+      - "8080:8080"
+      - "7077:7077"
+    #    volumes:
+    #      - ./spark-shared-data:/opt/bitnami/spark/data/
+    networks:
+      - nw
+
+  spark-worker:
+    image: bitnami/spark:latest
+    container_name: spark-worker
+    restart: unless-stopped
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_ADDRESS=spark://spark-master:7077
+    depends_on:
+      - spark-master
+    #    volumes:
+    #      - ./spark-shared-data:/opt/bitnami/spark/data/
+    networks:
+      - nw
+
+  # Hazelcast cluster
+  hazelcast:
+    image: hazelcast/hazelcast:latest
+    container_name: hazelcast
+    restart: unless-stopped
+    ports:
+      - "5701:5701"
+    environment:
+      - HZ_QUEUE_QUEUE_MAXSIZE=100
+      # Limit map
+      - HZ_MAP_DEFAULT_TIMETOLIVESECONDS=3600
+      - HZ_MAP_DEFAULT_MAXIDLESECONDS=3600
+      - HZ_MAP_DEFAULT_EVICTION_EVICTIONPOLICY=LRU
+      - HZ_MAP_DEFAULT_EVICTION_MAXSIZEPOLICY=PER_NODE
+      - HZ_MAP_DEFAULT_EVICTION_SIZE=5000
+    networks:
+      - nw
+
+  management-center:
+    image: hazelcast/management-center:latest
+    container_name: hz-management-center
+    restart: unless-stopped
+    ports:
+      - "8180:8080"
+    environment:
+      - MC_DEFAULT_CLUSTER=dev
+      - MC_DEFAULT_CLUSTER_MEMBERS=hazelcast
+    networks:
+      - nw
+
+volumes:
+  dbdata:

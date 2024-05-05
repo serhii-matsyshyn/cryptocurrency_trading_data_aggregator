@@ -5,26 +5,119 @@ Author: Serhii Matsyshyn (https://github.com/serhii-matsyshyn) <br>
 ## System architecture diagram
 ![Cryptocurrency_trading_data_aggregator_system_architecture_2.drawio.png](data%2Fimages%2FCryptocurrency_trading_data_aggregator_system_architecture_2.drawio.png)
 
+[//]: # (## 🖥 Usage)
+
+[//]: # ()
+[//]: # (### consul)
+
+[//]: # (```shell)
+
+[//]: # (cd consul)
+
+[//]: # (sudo docker-compose -f docker-compose-consul.yml up)
+
+[//]: # (```)
+
+[//]: # ()
+[//]: # (### ws_live_data_retrieve_service)
+
+[//]: # (```shell)
+
+[//]: # (cd ws_live_data_retrieve_service)
+
+[//]: # (sudo docker-compose -f docker-compose-cassandra-cluster.yml up)
+
+[//]: # (cat schema_creation.cql | sudo docker exec -i cassandra1 cqlsh)
+
+[//]: # (python3 ws_live_data_retrieve_service.py)
+
+[//]: # (```)
+
+[//]: # ()
+[//]: # (### sheduled_report_compute_service)
+
+[//]: # (```shell)
+
+[//]: # (cd sheduled_report_compute_service)
+
+[//]: # (docker-compose -f docker-compose-mongodb-spark.yml up)
+
+[//]: # (python3 sheduled_report_compute_service.py)
+
+[//]: # (```)
+
+[//]: # ()
+[//]: # (### precomputed_report_data_retrieve_service)
+
+[//]: # (```shell)
+
+[//]: # (cd precomputed_report_data_retrieve_service)
+
+[//]: # (python3 precomputed_report_data_retrieve_controller.py)
+
+[//]: # (```)
+
+[//]: # ()
+[//]: # (### live_data_retrieve_service)
+
+[//]: # (```shell)
+
+[//]: # (cd live_data_retrieve_service)
+
+[//]: # (docker-compose -f docker-compose-hazelcast.yml up)
+
+[//]: # (python3 live_data_retrieve_controller.py -p 8004)
+
+[//]: # (python3 live_data_retrieve_controller.py -p 8005)
+
+[//]: # (python3 live_data_retrieve_controller.py -p 8006)
+
+[//]: # (```)
+
+[//]: # ()
+[//]: # (### facade_service)
+
+[//]: # (```shell)
+
+[//]: # (cd facade_service)
+
+[//]: # (python3 facade_controller.py)
+
+[//]: # (```)
+
 ## 🖥 Usage
 
-### consul
+### Requirements
+- Docker
+- Docker-compose
+- Python 3.10 or higher
+- Pip
+
+It is necessary to install the required Python packages on the host machine (for easy deployment):
 ```shell
-cd consul
-sudo docker-compose -f docker-compose-consul.yml up
+pip3 install -r requirements.txt
+```
+
+### infrastructure_services
+```shell
+cd infrastructure_services
+./start-infrastructure-services.sh
+```
+
+To stop infrastructure services:
+```shell
+sudo docker-compose -f docker-compose-infrastructure.yml down
 ```
 
 ### ws_live_data_retrieve_service
 ```shell
 cd ws_live_data_retrieve_service
-sudo docker-compose -f docker-compose-cassandra-cluster.yml up
-cat schema_creation.cql | sudo docker exec -i cassandra1 cqlsh
 python3 ws_live_data_retrieve_service.py
 ```
 
 ### sheduled_report_compute_service
 ```shell
 cd sheduled_report_compute_service
-docker-compose -f docker-compose-mongodb-spark.yml up
 python3 sheduled_report_compute_service.py
 ```
 
@@ -37,7 +130,6 @@ python3 precomputed_report_data_retrieve_controller.py
 ### live_data_retrieve_service
 ```shell
 cd live_data_retrieve_service
-docker-compose -f docker-compose-hazelcast.yml up
 python3 live_data_retrieve_controller.py -p 8004
 python3 live_data_retrieve_controller.py -p 8005
 python3 live_data_retrieve_controller.py -p 8006

@@ -16,7 +16,7 @@ def import_to_consul(config, consul_client, prefix=""):
 
 
 def main():
-    with open("./config/config.yaml", "r") as yaml_file:
+    with open("./consul-config/config.yaml", "r") as yaml_file:
         config = yaml.safe_load(yaml_file)
 
     consul_client = consul.Consul()
