@@ -36,7 +36,10 @@ class FacadeService:
     def __init__(self, consul):
         self.consul = consul
 
-        self.client = hazelcast.HazelcastClient(cluster_name=consul.get_config("hazelcast/cluster_name"))
+        self.client = hazelcast.HazelcastClient(
+            cluster_members=[consul.get_config("hazelcast/cluster_host")],
+            cluster_name=consul.get_config("hazelcast/cluster_name")
+        )
         self.distributed_queue = self.client.get_queue(consul.get_config("hazelcast/live_data_queue")).blocking()
 
     @property

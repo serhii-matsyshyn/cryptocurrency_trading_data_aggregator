@@ -1,0 +1,19 @@
+networks:
+  nw:
+    name: nw
+    driver: bridge
+
+services:
+  facade-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - SERVICE_PORT=8000
+    container_name: facade-service
+    pull_policy: if_not_present
+    image: facade-service
+    networks:
+      - nw
+    ports:
+      - "8000:8000"

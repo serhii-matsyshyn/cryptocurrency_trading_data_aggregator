@@ -1,16 +1,17 @@
 hazelcast:
+  - cluster_host: hazelcast # hazelcast/localhost
   - cluster_name: dev
   - live_data_queue: queue
   - sum_trades_last_n_minutes_map: sum_trades_last_n_minutes
   - top_n_cryptos_last_hour_map: top_n_cryptos_last_hour
 
 cassandra:
-  - contact_point: localhost
+  - contact_point: cassandra1 # cassandra1/localhost
   - credentials:
       - username: cassandra
       - password: cassandra
   - keyspace: crypto_project
 
 mongodb:
-  - uri: mongodb://localhost:27017/
+  - uri: mongodb://mongodb:27017/ # mongodb://localhost:27017/
   - database: crypto_statistics
