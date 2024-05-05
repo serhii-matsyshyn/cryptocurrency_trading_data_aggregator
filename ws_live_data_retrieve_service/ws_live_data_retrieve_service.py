@@ -17,7 +17,7 @@ logger.setLevel(logging.DEBUG)
 
 class CryptoSpotExchangeWsAsync:
     def __init__(self, uri='wss://ws.bitmex.com/realtime?subscribe=tradeBin1m,quote'):
-        self.consul = ConsulServiceRegistry()
+        self.consul = ConsulServiceRegistry(consul_host="consul-server", consul_port=8500)
         self.repository = WSLiveDataRetrieveRepository(self.consul)
         self.uri = uri
 

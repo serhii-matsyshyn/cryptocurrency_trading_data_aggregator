@@ -1,0 +1,16 @@
+networks:
+  nw:
+    name: nw
+    driver: bridge
+
+services:
+  ws-live-data-retrieve-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ws-live-data-retrieve-service
+    restart: unless-stopped
+    pull_policy: if_not_present
+    image: ws-live-data-retrieve-service
+    networks:
+      - nw
