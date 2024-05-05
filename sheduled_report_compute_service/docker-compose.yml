@@ -1,0 +1,16 @@
+networks:
+  nw:
+    name: nw
+    driver: bridge
+
+services:
+  sheduled-report-compute-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sheduled-report-compute-service
+    restart: unless-stopped
+    pull_policy: if_not_present
+    image: sheduled-report-compute-service
+    networks:
+      - nw

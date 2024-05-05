@@ -15,3 +15,6 @@ cassandra:
 mongodb:
   - uri: mongodb://mongodb:27017/ # mongodb://localhost:27017/
   - database: crypto_statistics
+
+spark:
+  - master: spark://spark-master:7077 # spark://localhost:7077

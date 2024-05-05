@@ -20,8 +20,10 @@ logger.setLevel(logging.DEBUG)
 class CryptoStatistics:
     def __init__(self, consul):
         self.consul = consul
+        print(self.consul.get_config("spark/master"))
         self.spark = SparkSession.builder \
             .appName("CryptoStatistics") \
+            .config("spark.master", self.consul.get_config("spark/master")) \
             .config('spark.jars.packages', "com.datastax.spark:spark-cassandra-connector_2.12:3.5.0") \
             .config("spark.cassandra.connection.host", self.consul.get_config("cassandra/contact_point")) \
             .config("spark.sql.session.timeZone", "UTC") \
@@ -124,7 +126,8 @@ class CryptoStatistics:
 
 
 if __name__ == "__main__":
-    consul = ConsulServiceRegistry()
+    consul = ConsulServiceRegistry(consul_host="consul-server",
+                                   consul_port=8500)
     crypto_statistics = CryptoStatistics(consul=consul)
     try:
         while True:
