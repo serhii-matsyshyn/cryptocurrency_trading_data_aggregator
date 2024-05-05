@@ -43,7 +43,7 @@ class FacadeService:
     def get_precomputed_report_data_service(self):
         url = [f"http://{i}:{j}" for i, j in self.consul.get_service_addresses("precomputed_report_data_retrieve_service")]
         logger.info(f"precomputed_report_data_retrieve_service - from CONSUL - {url}")
-        return url[0]
+        return random.choice(url)
 
     def get_precomputed_report_data(self, report_name: str, params: dict):
         precomputed_report_service_url = self.get_precomputed_report_data_service
