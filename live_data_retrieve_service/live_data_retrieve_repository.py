@@ -24,7 +24,10 @@ class LiveDataRetrieveRepository:
                                protocol_version=3)
         self.session = self.cluster.connect(keyspace=consul.get_config("cassandra/keyspace"))
 
-        self.client = hazelcast.HazelcastClient(cluster_name=consul.get_config("hazelcast/cluster_name"))
+        self.client = hazelcast.HazelcastClient(
+            cluster_members=[consul.get_config("hazelcast/cluster_host")],
+            cluster_name=consul.get_config("hazelcast/cluster_name")
+        )
 
         self.hz_sum_trades_last_n_minutes_map = self.client.get_map(consul.get_config("hazelcast/sum_trades_last_n_minutes_map")).blocking()
         self.hz_top_n_cryptos_last_hour_map = self.client.get_map(consul.get_config("hazelcast/top_n_cryptos_last_hour_map")).blocking()

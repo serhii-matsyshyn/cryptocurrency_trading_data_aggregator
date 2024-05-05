@@ -1,5 +1,7 @@
 import argparse
 import logging
+import os
+from socket import gethostname, gethostbyname
 from fastapi import FastAPI, Query, Request
 
 from consul_service_registry import ConsulServiceRegistry
@@ -10,7 +12,7 @@ logger = logging.getLogger(__name__)
 
 app = FastAPI()
 
-consul = ConsulServiceRegistry()
+consul = ConsulServiceRegistry(consul_host="consul-server", consul_port=8500)
 live_data_retrieve_service = LiveDataRetrieveService(consul=consul)
 
 
@@ -22,9 +24,6 @@ async def health():
 if __name__ == '__main__':
     import uvicorn
 
-    parser = argparse.ArgumentParser()
-    parser.add_argument("-p", "--port", type=int, help="Specify the port number", default=8004)
-    args = parser.parse_args()
-
-    consul.register_service("live_data_retrieve_service", "127.0.0.1", args.port)
-    uvicorn.run(app, host="127.0.0.1", port=args.port)
+    port = int(os.environ.get("SERVICE_PORT"))
+    consul.register_service("live_data_retrieve_service", gethostbyname(gethostname()), port)
+    uvicorn.run(app, host=gethostbyname(gethostname()), port=port)

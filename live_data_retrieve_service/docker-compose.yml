@@ -1,0 +1,41 @@
+networks:
+  nw:
+    name: nw
+    driver: bridge
+
+services:
+  live-data-retrieve-service-1:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - SERVICE_PORT=8004
+    container_name: live-data-retrieve-service-1
+    pull_policy: if_not_present
+    image: live-data-retrieve-service
+    networks:
+      - nw
+
+  live-data-retrieve-service-2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - SERVICE_PORT=8005
+    container_name: live-data-retrieve-service-2
+    pull_policy: if_not_present
+    image: live-data-retrieve-service
+    networks:
+      - nw
+
+  live-data-retrieve-service-3:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - SERVICE_PORT=8006
+    container_name: live-data-retrieve-service-3
+    pull_policy: if_not_present
+    image: live-data-retrieve-service
+    networks:
+      - nw
