@@ -4,6 +4,14 @@ networks:
     driver: bridge
 
 services:
+  # Base container for all custom Python services
+  base-container:
+    build:
+      context: .
+      dockerfile: base_container.Dockerfile
+    container_name: base-container
+    image: base-container:latest
+
   # Consul service
   consul-server:
     image: hashicorp/consul:latest

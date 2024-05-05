@@ -95,7 +95,7 @@ Author: Serhii Matsyshyn (https://github.com/serhii-matsyshyn) <br>
 
 It is necessary to install the required Python packages on the host machine (for easy deployment):
 ```shell
-pip3 install -r requirements.txt
+pip3 install -r infrastructure_services/requirements.txt
 ```
 
 ### infrastructure_services
