@@ -24,12 +24,13 @@ class CryptoStatistics:
             .appName("CryptoStatistics") \
             .config('spark.jars.packages', "com.datastax.spark:spark-cassandra-connector_2.12:3.5.0") \
             .config("spark.cassandra.connection.host", self.consul.get_config("cassandra/contact_point")) \
+            .config("spark.sql.session.timeZone", "UTC") \
             .getOrCreate()
 
         self.client = MongoClient(self.consul.get_config("mongodb/uri"))
         self.db = self.client[self.consul.get_config("mongodb/database")]
 
-        # self.compute_and_save_statistics()
+        self.compute_and_save_statistics()  # Compute and save statistics for the first time
         self.scheduler = BackgroundScheduler()
         self.scheduler.add_job(self.compute_and_save_statistics, 'interval', minutes=5)
         # FIXME: change to minutes=60, and set fixed time ie each hour at 00 minutes
