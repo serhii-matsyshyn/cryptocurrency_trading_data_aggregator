@@ -11,6 +11,7 @@ services:
     environment:
       - SERVICE_PORT=8000
     container_name: facade-service
+    restart: unless-stopped
     pull_policy: if_not_present
     image: facade-service
     networks:
