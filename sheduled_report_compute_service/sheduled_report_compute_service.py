@@ -114,10 +114,13 @@ class CryptoStatistics:
             collection.insert_one(data)
 
     def __del__(self):
-        self.spark.stop()
-        self.scheduler.shutdown()
-        self.client.close()
-        self.consul.deregister_service()
+        try:
+            self.spark.stop()
+            self.scheduler.shutdown()
+            self.client.close()
+            self.consul.deregister_service()
+        except Exception as e:
+            logger.error(e)
 
 
 if __name__ == "__main__":

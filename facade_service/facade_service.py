@@ -66,4 +66,8 @@ class FacadeService:
         return data_receiver.wait_for_message()
 
     def __del__(self):
-        self.consul.deregister_service()
+        try:
+            self.client.shutdown()
+            self.consul.deregister_service()
+        except Exception as e:
+            logger.error(e)

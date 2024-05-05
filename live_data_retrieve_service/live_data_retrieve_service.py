@@ -72,6 +72,9 @@ class LiveDataRetrieveService:
                         pass
 
     def __del__(self):
-        self.consul.deregister_service()
-        self.running = False
-        self.consumer.join()
+        try:
+            self.consul.deregister_service()
+            self.running = False
+            self.consumer.join()
+        except Exception as e:
+            logger.error(e)
