@@ -22,6 +22,10 @@ async def get_precomputed_report_data(report_name: str, request: Request):
 async def get_live_data(report_name: str, request: Request):
     return facade_service.get_live_data(report_name, dict(request.query_params))
 
+@app.get("/health")
+async def health():
+    return {"status": "ok"}
+
 
 if __name__ == "__main__":
     import uvicorn

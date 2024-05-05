@@ -32,6 +32,10 @@ async def get_hourly_trades_volume(volume_type: str = Query("foreignNotional")):
     return precomputed_report_data_retrieve_service.get_hourly_trades_volume(volume_type=volume_type)
 
 
+@app.get('/health')
+async def health_check():
+    return {"status": "ok"}
+
 if __name__ == "__main__":
     import uvicorn
 
