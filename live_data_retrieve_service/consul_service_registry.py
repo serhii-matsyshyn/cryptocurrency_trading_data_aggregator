@@ -7,12 +7,14 @@ class ConsulServiceRegistry:
         self.service_id = None
 
     def register_service(self, service_name, service_address, service_port):
+        check = consul.Check.http(f"http://{service_address}:{service_port}/health", "10s")
         self.service_id = f"{service_name}-{service_address}-{service_port}"
         self.consul.agent.service.register(
             name=service_name,
             service_id=self.service_id,
             address=service_address,
-            port=service_port
+            port=service_port,
+            check=check
         )
 
     def deregister_service(self):
