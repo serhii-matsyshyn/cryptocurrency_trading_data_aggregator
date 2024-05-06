@@ -1,0 +1,12 @@
+{
+  "top_cryptos": {
+    "XBTUSD": 13836200.0,
+    "XBTUSDT": 1403192.889,
+    "ETHUSD": 1123946.4544920032,
+    "XRPUSD": 428559.96834503894,
+    "SOLUSD": 285567.21252443903
+  },
+  "volume_type": "foreignNotional",
+  "start_timestamp": "2024-05-06T16:25:00",
+  "end_timestamp": "2024-05-06T17:25:00"
+}

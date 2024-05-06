@@ -1,0 +1,12 @@
+{
+  "top_cryptos": {
+    "PEPEUSDT": 1763980000.0,
+    "PEPEUSD": 622082092.7776324,
+    "SHIBUSDT": 19000000.0,
+    "XRPUSD": 765848.3786115209,
+    "DOGEUSD": 751536.4620285322
+  },
+  "volume_type": "homeNotional",
+  "start_timestamp": "2024-05-06T16:25:00",
+  "end_timestamp": "2024-05-06T17:25:00"
+}

@@ -1,0 +1,626 @@
+{
+  "report_date": "2024-05-06T17:00:02.334000",
+  "report_name": "total_volume_homeNotional",
+  "data": [
+    {
+      "symbol": "PEPEUSD",
+      "total_volume": 30275018228.950855
+    },
+    {
+      "symbol": "PEPEUSDT",
+      "total_volume": 12088420000.0
+    },
+    {
+      "symbol": "SHIBUSDT",
+      "total_volume": 177260000.0
+    },
+    {
+      "symbol": "SHIBUSD",
+      "total_volume": 83198937.58269534
+    },
+    {
+      "symbol": "LUNCUSDT",
+      "total_volume": 12014000.0
+    },
+    {
+      "symbol": "DOGEUSD",
+      "total_volume": 8612831.049116109
+    },
+    {
+      "symbol": "100SATSUSD",
+      "total_volume": 4386522.56834075
+    },
+    {
+      "symbol": "XRPUSD",
+      "total_volume": 4172288.8554328647
+    },
+    {
+      "symbol": "DOGEUSDT",
+      "total_volume": 2492620.0
+    },
+    {
+      "symbol": "ADAUSD",
+      "total_volume": 1029878.1503363695
+    },
+    {
+      "symbol": "XRPUSDT",
+      "total_volume": 815530.0
+    },
+    {
+      "symbol": "BONK_USDT",
+      "total_volume": 289196.0
+    },
+    {
+      "symbol": "MBLUSDT",
+      "total_volume": 266000.0
+    },
+    {
+      "symbol": "DFIUSDT",
+      "total_volume": 241380.0
+    },
+    {
+      "symbol": "MATICUSDT",
+      "total_volume": 227360.0
+    },
+    {
+      "symbol": "100BONKUSDT",
+      "total_volume": 157000.0
+    },
+    {
+      "symbol": "SUIUSD",
+      "total_volume": 146394.2565260551
+    },
+    {
+      "symbol": "MEWUSDT",
+      "total_volume": 108000.0
+    },
+    {
+      "symbol": "ARBUSD",
+      "total_volume": 71367.70853657153
+    },
+    {
+      "symbol": "GMTUSD",
+      "total_volume": 63572.79084551812
+    },
+    {
+      "symbol": "AGIUSDT",
+      "total_volume": 46800.0
+    },
+    {
+      "symbol": "ADAUSDT",
+      "total_volume": 33860.0
+    },
+    {
+      "symbol": "DOTUSD",
+      "total_volume": 33319.33498824854
+    },
+    {
+      "symbol": "SUIUSDT",
+      "total_volume": 32189.399999999994
+    },
+    {
+      "symbol": "JSTUSDT",
+      "total_volume": 28000.0
+    },
+    {
+      "symbol": "BOMEUSDT",
+      "total_volume": 24480.0
+    },
+    {
+      "symbol": "SOLUSD",
+      "total_volume": 22601.06615622481
+    },
+    {
+      "symbol": "APEUSDT",
+      "total_volume": 20405.0
+    },
+    {
+      "symbol": "USTCUSDT",
+      "total_volume": 20100.0
+    },
+    {
+      "symbol": "WUSDTZ24",
+      "total_volume": 20019.0
+    },
+    {
+      "symbol": "TRXUSDT",
+      "total_volume": 19700.0
+    },
+    {
+      "symbol": "XPLAUSDT",
+      "total_volume": 14340.0
+    },
+    {
+      "symbol": "LINKUSD",
+      "total_volume": 13667.479447291966
+    },
+    {
+      "symbol": "ENAUSDT",
+      "total_volume": 13620.0
+    },
+    {
+      "symbol": "GASUSDT",
+      "total_volume": 13190.0
+    },
+    {
+      "symbol": "MLKUSDT",
+      "total_volume": 12930.0
+    },
+    {
+      "symbol": "BMEX_USDT",
+      "total_volume": 11652.0
+    },
+    {
+      "symbol": "SNTUSDT",
+      "total_volume": 10800.0
+    },
+    {
+      "symbol": "WUSDT",
+      "total_volume": 10000.0
+    },
+    {
+      "symbol": "WLDUSD",
+      "total_volume": 9269.725937238489
+    },
+    {
+      "symbol": "LTCUSD",
+      "total_volume": 8895.982772930227
+    },
+    {
+      "symbol": "POLYXUSDT",
+      "total_volume": 7550.0
+    },
+    {
+      "symbol": "NEARUSD",
+      "total_volume": 7502.014872538435
+    },
+    {
+      "symbol": "SOLUSDT",
+      "total_volume": 4580.5
+    },
+    {
+      "symbol": "DYMUSDT",
+      "total_volume": 3957.0
+    },
+    {
+      "symbol": "ETHUSD",
+      "total_volume": 3939.2909341019504
+    },
+    {
+      "symbol": "CROUSD",
+      "total_volume": 3939.1790039421094
+    },
+    {
+      "symbol": "FILUSD",
+      "total_volume": 3316.9658647027786
+    },
+    {
+      "symbol": "FLRUSD",
+      "total_volume": 3267.641449459631
+    },
+    {
+      "symbol": "AVAXUSD",
+      "total_volume": 2943.1819222033937
+    },
+    {
+      "symbol": "AEVOUSDTZ24",
+      "total_volume": 2711.0
+    },
+    {
+      "symbol": "BIGTIMEUSDT",
+      "total_volume": 2650.0
+    },
+    {
+      "symbol": "ARKUSDT",
+      "total_volume": 2250.0
+    },
+    {
+      "symbol": "GLMRUSDT",
+      "total_volume": 2070.0
+    },
+    {
+      "symbol": "FTTUSDT",
+      "total_volume": 1944.6
+    },
+    {
+      "symbol": "JUPUSDT",
+      "total_volume": 1780.0
+    },
+    {
+      "symbol": "XBTUSD",
+      "total_volume": 1707.1845089599994
+    },
+    {
+      "symbol": "AERGOUSDT",
+      "total_volume": 1700.0
+    },
+    {
+      "symbol": "USDTUSDC",
+      "total_volume": 1443.167523964174
+    },
+    {
+      "symbol": "FTMUSD",
+      "total_volume": 1366.6789408442605
+    },
+    {
+      "symbol": "WIFUSDT",
+      "total_volume": 1230.0
+    },
+    {
+      "symbol": "ETHUSDT",
+      "total_volume": 1128.5399999999993
+    },
+    {
+      "symbol": "LTCUSDT",
+      "total_volume": 1095.8000000000006
+    },
+    {
+      "symbol": "CYBERUSDT",
+      "total_volume": 990.0
+    },
+    {
+      "symbol": "APTUSD",
+      "total_volume": 948.7978363737366
+    },
+    {
+      "symbol": "AXLUSDT",
+      "total_volume": 870.0
+    },
+    {
+      "symbol": "MERLUSD",
+      "total_volume": 806.3280043332385
+    },
+    {
+      "symbol": "BCHUSD",
+      "total_volume": 758.3023283043864
+    },
+    {
+      "symbol": "AXSUSD",
+      "total_volume": 702.6119242236754
+    },
+    {
+      "symbol": "FLIPUSDT",
+      "total_volume": 700.0
+    },
+    {
+      "symbol": "ALTUSDT",
+      "total_volume": 660.0
+    },
+    {
+      "symbol": "ONDOUSDT",
+      "total_volume": 650.0
+    },
+    {
+      "symbol": "LDOUSD",
+      "total_volume": 649.0455489065373
+    },
+    {
+      "symbol": "LINKUSDT",
+      "total_volume": 645.0
+    },
+    {
+      "symbol": "KLAYUSD",
+      "total_volume": 631.3131313131313
+    },
+    {
+      "symbol": "WLDUSDT",
+      "total_volume": 593.0
+    },
+    {
+      "symbol": "TNSRUSDT",
+      "total_volume": 551.0
+    },
+    {
+      "symbol": "EOSUSD",
+      "total_volume": 510.5296745373325
+    },
+    {
+      "symbol": "SUPERUSDT",
+      "total_volume": 480.0
+    },
+    {
+      "symbol": "ARBUSDT",
+      "total_volume": 463.2
+    },
+    {
+      "symbol": "FILUSDT",
+      "total_volume": 460.0
+    },
+    {
+      "symbol": "MANTAUSDT",
+      "total_volume": 452.0
+    },
+    {
+      "symbol": "TIAUSDT",
+      "total_volume": 440.0
+    },
+    {
+      "symbol": "LUNAUSDT",
+      "total_volume": 427.0
+    },
+    {
+      "symbol": "FETUSD",
+      "total_volume": 382.71533128668153
+    },
+    {
+      "symbol": "STRKUSDT",
+      "total_volume": 378.0
+    },
+    {
+      "symbol": "RBNUSDT",
+      "total_volume": 370.0
+    },
+    {
+      "symbol": "OPUSD",
+      "total_volume": 304.4840328452469
+    },
+    {
+      "symbol": "PYTHUSDT",
+      "total_volume": 300.0
+    },
+    {
+      "symbol": "BNBUSD",
+      "total_volume": 290.4288058700096
+    },
+    {
+      "symbol": "DOTUSDT",
+      "total_volume": 286.0
+    },
+    {
+      "symbol": "XAIUSDT",
+      "total_volume": 280.0
+    },
+    {
+      "symbol": "MINAUSDT",
+      "total_volume": 260.0
+    },
+    {
+      "symbol": "BLURUSD",
+      "total_volume": 252.5252525252525
+    },
+    {
+      "symbol": "ACEUSDT",
+      "total_volume": 240.0
+    },
+    {
+      "symbol": "ZETAUSDT",
+      "total_volume": 211.0
+    },
+    {
+      "symbol": "LDOUSDT",
+      "total_volume": 209.0
+    },
+    {
+      "symbol": "AVAXUSDT",
+      "total_volume": 209.0
+    },
+    {
+      "symbol": "PORTALUSDT",
+      "total_volume": 199.0
+    },
+    {
+      "symbol": "XRP_USDT",
+      "total_volume": 186.0
+    },
+    {
+      "symbol": "SEIUSDT",
+      "total_volume": 160.0
+    },
+    {
+      "symbol": "XBTUSDT",
+      "total_volume": 140.16099999999997
+    },
+    {
+      "symbol": "NEARUSDT",
+      "total_volume": 119.0
+    },
+    {
+      "symbol": "BCHUSDT",
+      "total_volume": 97.18999999999998
+    },
+    {
+      "symbol": "PIXELUSDT",
+      "total_volume": 90.0
+    },
+    {
+      "symbol": "DYDXUSD",
+      "total_volume": 69.79787023698437
+    },
+    {
+      "symbol": "BLURUSDT",
+      "total_volume": 50.0
+    },
+    {
+      "symbol": "EIGENUSDTK24",
+      "total_volume": 43.0
+    },
+    {
+      "symbol": "PARCLUSDTK24",
+      "total_volume": 38.0
+    },
+    {
+      "symbol": "MATIC_USDT",
+      "total_volume": 38.0
+    },
+    {
+      "symbol": "MYROUSDT",
+      "total_volume": 30.0
+    },
+    {
+      "symbol": "ORDIUSD",
+      "total_volume": 24.158080329460375
+    },
+    {
+      "symbol": "INJUSDT",
+      "total_volume": 20.0
+    },
+    {
+      "symbol": "XBTU24",
+      "total_volume": 14.924914829999999
+    },
+    {
+      "symbol": "SAGAUSDT",
+      "total_volume": 13.0
+    },
+    {
+      "symbol": "OKBUSDT",
+      "total_volume": 12.9
+    },
+    {
+      "symbol": "XBTM24",
+      "total_volume": 12.262813680000002
+    },
+    {
+      "symbol": "ETHM24",
+      "total_volume": 11.009999999999998
+    },
+    {
+      "symbol": "WOOUSDT",
+      "total_volume": 10.0
+    },
+    {
+      "symbol": "SLERFUSDT",
+      "total_volume": 10.0
+    },
+    {
+      "symbol": "XBTZ24",
+      "total_volume": 4.621640580000001
+    },
+    {
+      "symbol": "BNBUSDT",
+      "total_volume": 3.9000000000000004
+    },
+    {
+      "symbol": "XBTEUR",
+      "total_volume": 1.6427950799999997
+    },
+    {
+      "symbol": "BMEXUSD",
+      "total_volume": 1.272264631043257
+    },
+    {
+      "symbol": "ETHUSDM24",
+      "total_volume": 0.8270167212813343
+    },
+    {
+      "symbol": "XAUTUSD",
+      "total_volume": 0.8206682473513999
+    },
+    {
+      "symbol": "XBTETH",
+      "total_volume": 0.41901932
+    },
+    {
+      "symbol": "XBT_USDT",
+      "total_volume": 0.18589999999999995
+    },
+    {
+      "symbol": "SOL_USDT",
+      "total_volume": 0.094
+    },
+    {
+      "symbol": "XBTUSDTM24",
+      "total_volume": 0.015
+    },
+    {
+      "symbol": "ETH_USDT",
+      "total_volume": 0.009000000000000001
+    },
+    {
+      "symbol": "ETH_XBT",
+      "total_volume": 0.005
+    },
+    {
+      "symbol": "ATOM_USDT",
+      "total_volume": 0.0
+    },
+    {
+      "symbol": "ORBSUSDT",
+      "total_volume": 0.0
+    },
+    {
+      "symbol": "XBTK24",
+      "total_volume": 0.0
+    },
+    {
+      "symbol": "OPUSDT",
+      "total_volume": 0.0
+    },
+    {
+      "symbol": "P_FTXZ26",
+      "total_volume": 0.0
+    },
+    {
+      "symbol": "APE_USDT",
+      "total_volume": 0.0
+    },
+    {
+      "symbol": "MEMEUSDT",
+      "total_volume": 0.0
+    },
+    {
+      "symbol": "P_SBFPARDONF25",
+      "total_volume": 0.0
+    },
+    {
+      "symbol": "JTOUSDT",
+      "total_volume": 0.0
+    },
+    {
+      "symbol": "TRX_USDT",
+      "total_volume": 0.0
+    },
+    {
+      "symbol": "TONUSD",
+      "total_volume": 0.0
+    },
+    {
+      "symbol": "ADAM24",
+      "total_volume": 0.0
+    },
+    {
+      "symbol": "LINK_USDT",
+      "total_volume": 0.0
+    },
+    {
+      "symbol": "UNI_USDT",
+      "total_volume": 0.0
+    },
+    {
+      "symbol": "BLASTUSDTZ24",
+      "total_volume": 0.0
+    },
+    {
+      "symbol": "LUNAUSD",
+      "total_volume": 0.0
+    },
+    {
+      "symbol": "REZUSDTK24",
+      "total_volume": 0.0
+    },
+    {
+      "symbol": "XRDUSDT",
+      "total_volume": 0.0
+    },
+    {
+      "symbol": "XRPM24",
+      "total_volume": 0.0
+    },
+    {
+      "symbol": "BMEXUSDT",
+      "total_volume": 0.0
+    },
+    {
+      "symbol": "GMTUSDT",
+      "total_volume": 0.0
+    },
+    {
+      "symbol": "AXS_USDT",
+      "total_volume": 0.0
+    },
+    {
+      "symbol": "AEVOUSDT",
+      "total_volume": 0.0
+    }
+  ]
+}

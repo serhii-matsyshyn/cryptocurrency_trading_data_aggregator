@@ -1,0 +1,3501 @@
+{
+  "report_date": "2024-05-06T17:00:02.329000",
+  "report_name": "hourly_transactions",
+  "data": [
+    {
+      "symbol": "XBTUSD",
+      "hour": 14,
+      "transaction_count": 7359
+    },
+    {
+      "symbol": "XBTUSD",
+      "hour": 15,
+      "transaction_count": 7030
+    },
+    {
+      "symbol": "XBTUSD",
+      "hour": 13,
+      "transaction_count": 5602
+    },
+    {
+      "symbol": "XBTUSD",
+      "hour": 16,
+      "transaction_count": 4538
+    },
+    {
+      "symbol": "XBTUSD",
+      "hour": 12,
+      "transaction_count": 2904
+    },
+    {
+      "symbol": "ETHUSD",
+      "hour": 15,
+      "transaction_count": 2146
+    },
+    {
+      "symbol": "ETHUSD",
+      "hour": 14,
+      "transaction_count": 1577
+    },
+    {
+      "symbol": "XBTUSDT",
+      "hour": 15,
+      "transaction_count": 1237
+    },
+    {
+      "symbol": "ETHUSD",
+      "hour": 16,
+      "transaction_count": 1134
+    },
+    {
+      "symbol": "ETHUSD",
+      "hour": 13,
+      "transaction_count": 1124
+    },
+    {
+      "symbol": "DOGEUSD",
+      "hour": 14,
+      "transaction_count": 1104
+    },
+    {
+      "symbol": "SOLUSD",
+      "hour": 14,
+      "transaction_count": 1072
+    },
+    {
+      "symbol": "SOLUSD",
+      "hour": 13,
+      "transaction_count": 1020
+    },
+    {
+      "symbol": "XRPUSD",
+      "hour": 16,
+      "transaction_count": 961
+    },
+    {
+      "symbol": "SOLUSD",
+      "hour": 15,
+      "transaction_count": 956
+    },
+    {
+      "symbol": "ETHUSD",
+      "hour": 12,
+      "transaction_count": 912
+    },
+    {
+      "symbol": "DOGEUSD",
+      "hour": 15,
+      "transaction_count": 912
+    },
+    {
+      "symbol": "XBTUSDT",
+      "hour": 14,
+      "transaction_count": 903
+    },
+    {
+      "symbol": "DOGEUSD",
+      "hour": 13,
+      "transaction_count": 885
+    },
+    {
+      "symbol": "XBTUSDT",
+      "hour": 16,
+      "transaction_count": 791
+    },
+    {
+      "symbol": "XBTUSDT",
+      "hour": 13,
+      "transaction_count": 782
+    },
+    {
+      "symbol": "XBTUSDT",
+      "hour": 12,
+      "transaction_count": 724
+    },
+    {
+      "symbol": "ETHUSDT",
+      "hour": 13,
+      "transaction_count": 652
+    },
+    {
+      "symbol": "XRPUSD",
+      "hour": 15,
+      "transaction_count": 556
+    },
+    {
+      "symbol": "ETHUSDT",
+      "hour": 14,
+      "transaction_count": 478
+    },
+    {
+      "symbol": "SHIBUSDT",
+      "hour": 13,
+      "transaction_count": 425
+    },
+    {
+      "symbol": "ETHUSDT",
+      "hour": 12,
+      "transaction_count": 386
+    },
+    {
+      "symbol": "ETHUSDT",
+      "hour": 15,
+      "transaction_count": 382
+    },
+    {
+      "symbol": "XRPUSDT",
+      "hour": 15,
+      "transaction_count": 382
+    },
+    {
+      "symbol": "SOLUSDT",
+      "hour": 14,
+      "transaction_count": 377
+    },
+    {
+      "symbol": "LTCUSD",
+      "hour": 12,
+      "transaction_count": 336
+    },
+    {
+      "symbol": "XRPUSDT",
+      "hour": 16,
+      "transaction_count": 329
+    },
+    {
+      "symbol": "SOLUSD",
+      "hour": 16,
+      "transaction_count": 298
+    },
+    {
+      "symbol": "LTCUSD",
+      "hour": 13,
+      "transaction_count": 296
+    },
+    {
+      "symbol": "LTCUSD",
+      "hour": 15,
+      "transaction_count": 293
+    },
+    {
+      "symbol": "ARBUSD",
+      "hour": 16,
+      "transaction_count": 291
+    },
+    {
+      "symbol": "SOLUSDT",
+      "hour": 15,
+      "transaction_count": 289
+    },
+    {
+      "symbol": "DOGEUSDT",
+      "hour": 14,
+      "transaction_count": 279
+    },
+    {
+      "symbol": "DOGEUSDT",
+      "hour": 15,
+      "transaction_count": 272
+    },
+    {
+      "symbol": "SOLUSDT",
+      "hour": 13,
+      "transaction_count": 262
+    },
+    {
+      "symbol": "SHIBUSDT",
+      "hour": 12,
+      "transaction_count": 261
+    },
+    {
+      "symbol": "XRPUSD",
+      "hour": 13,
+      "transaction_count": 256
+    },
+    {
+      "symbol": "SOLUSD",
+      "hour": 12,
+      "transaction_count": 249
+    },
+    {
+      "symbol": "XRPUSD",
+      "hour": 14,
+      "transaction_count": 248
+    },
+    {
+      "symbol": "DOGEUSD",
+      "hour": 16,
+      "transaction_count": 237
+    },
+    {
+      "symbol": "DOGEUSD",
+      "hour": 12,
+      "transaction_count": 230
+    },
+    {
+      "symbol": "DOTUSD",
+      "hour": 14,
+      "transaction_count": 217
+    },
+    {
+      "symbol": "ETHUSDT",
+      "hour": 16,
+      "transaction_count": 208
+    },
+    {
+      "symbol": "SOLUSDT",
+      "hour": 16,
+      "transaction_count": 206
+    },
+    {
+      "symbol": "XBTU24",
+      "hour": 13,
+      "transaction_count": 191
+    },
+    {
+      "symbol": "DOTUSD",
+      "hour": 16,
+      "transaction_count": 189
+    },
+    {
+      "symbol": "LINKUSD",
+      "hour": 13,
+      "transaction_count": 187
+    },
+    {
+      "symbol": "ADAUSD",
+      "hour": 15,
+      "transaction_count": 182
+    },
+    {
+      "symbol": "BCHUSD",
+      "hour": 16,
+      "transaction_count": 178
+    },
+    {
+      "symbol": "DOGEUSDT",
+      "hour": 13,
+      "transaction_count": 175
+    },
+    {
+      "symbol": "DOTUSD",
+      "hour": 15,
+      "transaction_count": 161
+    },
+    {
+      "symbol": "DOGEUSDT",
+      "hour": 12,
+      "transaction_count": 160
+    },
+    {
+      "symbol": "SOLUSDT",
+      "hour": 12,
+      "transaction_count": 155
+    },
+    {
+      "symbol": "DOGEUSDT",
+      "hour": 16,
+      "transaction_count": 155
+    },
+    {
+      "symbol": "XBTZ24",
+      "hour": 15,
+      "transaction_count": 153
+    },
+    {
+      "symbol": "BNBUSD",
+      "hour": 15,
+      "transaction_count": 152
+    },
+    {
+      "symbol": "XBTU24",
+      "hour": 15,
+      "transaction_count": 150
+    },
+    {
+      "symbol": "ADAUSD",
+      "hour": 14,
+      "transaction_count": 143
+    },
+    {
+      "symbol": "LINKUSD",
+      "hour": 14,
+      "transaction_count": 134
+    },
+    {
+      "symbol": "ADAUSD",
+      "hour": 13,
+      "transaction_count": 134
+    },
+    {
+      "symbol": "XBTZ24",
+      "hour": 14,
+      "transaction_count": 131
+    },
+    {
+      "symbol": "XRPUSD",
+      "hour": 12,
+      "transaction_count": 128
+    },
+    {
+      "symbol": "SHIBUSDT",
+      "hour": 14,
+      "transaction_count": 126
+    },
+    {
+      "symbol": "ADAUSD",
+      "hour": 12,
+      "transaction_count": 122
+    },
+    {
+      "symbol": "LINKUSD",
+      "hour": 15,
+      "transaction_count": 117
+    },
+    {
+      "symbol": "LTCUSD",
+      "hour": 16,
+      "transaction_count": 113
+    },
+    {
+      "symbol": "BCHUSD",
+      "hour": 13,
+      "transaction_count": 113
+    },
+    {
+      "symbol": "MATICUSDT",
+      "hour": 13,
+      "transaction_count": 109
+    },
+    {
+      "symbol": "LTCUSD",
+      "hour": 14,
+      "transaction_count": 105
+    },
+    {
+      "symbol": "BCHUSD",
+      "hour": 15,
+      "transaction_count": 104
+    },
+    {
+      "symbol": "MATICUSDT",
+      "hour": 15,
+      "transaction_count": 101
+    },
+    {
+      "symbol": "DOTUSD",
+      "hour": 12,
+      "transaction_count": 97
+    },
+    {
+      "symbol": "BNBUSD",
+      "hour": 14,
+      "transaction_count": 96
+    },
+    {
+      "symbol": "BNBUSD",
+      "hour": 12,
+      "transaction_count": 94
+    },
+    {
+      "symbol": "XBTU24",
+      "hour": 14,
+      "transaction_count": 91
+    },
+    {
+      "symbol": "DOTUSD",
+      "hour": 13,
+      "transaction_count": 89
+    },
+    {
+      "symbol": "WLDUSD",
+      "hour": 13,
+      "transaction_count": 84
+    },
+    {
+      "symbol": "ADAUSD",
+      "hour": 16,
+      "transaction_count": 81
+    },
+    {
+      "symbol": "BNBUSD",
+      "hour": 16,
+      "transaction_count": 81
+    },
+    {
+      "symbol": "AVAXUSD",
+      "hour": 16,
+      "transaction_count": 80
+    },
+    {
+      "symbol": "LTCUSDT",
+      "hour": 13,
+      "transaction_count": 78
+    },
+    {
+      "symbol": "XBTM24",
+      "hour": 16,
+      "transaction_count": 77
+    },
+    {
+      "symbol": "XBTM24",
+      "hour": 14,
+      "transaction_count": 76
+    },
+    {
+      "symbol": "MATICUSDT",
+      "hour": 16,
+      "transaction_count": 74
+    },
+    {
+      "symbol": "NEARUSD",
+      "hour": 15,
+      "transaction_count": 73
+    },
+    {
+      "symbol": "BCHUSD",
+      "hour": 14,
+      "transaction_count": 72
+    },
+    {
+      "symbol": "XRPUSDT",
+      "hour": 13,
+      "transaction_count": 71
+    },
+    {
+      "symbol": "WLDUSD",
+      "hour": 14,
+      "transaction_count": 70
+    },
+    {
+      "symbol": "XBTM24",
+      "hour": 13,
+      "transaction_count": 69
+    },
+    {
+      "symbol": "NEARUSD",
+      "hour": 14,
+      "transaction_count": 69
+    },
+    {
+      "symbol": "XBTZ24",
+      "hour": 13,
+      "transaction_count": 69
+    },
+    {
+      "symbol": "PEPEUSDT",
+      "hour": 13,
+      "transaction_count": 68
+    },
+    {
+      "symbol": "AVAXUSD",
+      "hour": 13,
+      "transaction_count": 65
+    },
+    {
+      "symbol": "BNBUSD",
+      "hour": 13,
+      "transaction_count": 64
+    },
+    {
+      "symbol": "ADAUSDT",
+      "hour": 14,
+      "transaction_count": 64
+    },
+    {
+      "symbol": "WLDUSD",
+      "hour": 12,
+      "transaction_count": 62
+    },
+    {
+      "symbol": "LINKUSD",
+      "hour": 16,
+      "transaction_count": 61
+    },
+    {
+      "symbol": "LTCUSDT",
+      "hour": 14,
+      "transaction_count": 61
+    },
+    {
+      "symbol": "LTCUSDT",
+      "hour": 12,
+      "transaction_count": 59
+    },
+    {
+      "symbol": "SUIUSDT",
+      "hour": 13,
+      "transaction_count": 59
+    },
+    {
+      "symbol": "LINKUSD",
+      "hour": 12,
+      "transaction_count": 57
+    },
+    {
+      "symbol": "PEPEUSD",
+      "hour": 13,
+      "transaction_count": 52
+    },
+    {
+      "symbol": "NEARUSD",
+      "hour": 16,
+      "transaction_count": 52
+    },
+    {
+      "symbol": "NEARUSD",
+      "hour": 13,
+      "transaction_count": 51
+    },
+    {
+      "symbol": "LTCUSDT",
+      "hour": 15,
+      "transaction_count": 50
+    },
+    {
+      "symbol": "AVAXUSD",
+      "hour": 15,
+      "transaction_count": 49
+    },
+    {
+      "symbol": "WLDUSD",
+      "hour": 16,
+      "transaction_count": 48
+    },
+    {
+      "symbol": "XBTEUR",
+      "hour": 15,
+      "transaction_count": 48
+    },
+    {
+      "symbol": "BCHUSD",
+      "hour": 12,
+      "transaction_count": 48
+    },
+    {
+      "symbol": "BMEX_USDT",
+      "hour": 14,
+      "transaction_count": 48
+    },
+    {
+      "symbol": "AVAXUSD",
+      "hour": 14,
+      "transaction_count": 46
+    },
+    {
+      "symbol": "XBTM24",
+      "hour": 15,
+      "transaction_count": 44
+    },
+    {
+      "symbol": "XBTU24",
+      "hour": 12,
+      "transaction_count": 44
+    },
+    {
+      "symbol": "LTCUSDT",
+      "hour": 16,
+      "transaction_count": 42
+    },
+    {
+      "symbol": "SUIUSD",
+      "hour": 15,
+      "transaction_count": 41
+    },
+    {
+      "symbol": "XBTU24",
+      "hour": 16,
+      "transaction_count": 41
+    },
+    {
+      "symbol": "WLDUSD",
+      "hour": 15,
+      "transaction_count": 40
+    },
+    {
+      "symbol": "XBTEUR",
+      "hour": 13,
+      "transaction_count": 39
+    },
+    {
+      "symbol": "AVAXUSD",
+      "hour": 12,
+      "transaction_count": 39
+    },
+    {
+      "symbol": "LINKUSDT",
+      "hour": 12,
+      "transaction_count": 38
+    },
+    {
+      "symbol": "SUIUSD",
+      "hour": 12,
+      "transaction_count": 37
+    },
+    {
+      "symbol": "SUIUSD",
+      "hour": 13,
+      "transaction_count": 35
+    },
+    {
+      "symbol": "SUIUSDT",
+      "hour": 16,
+      "transaction_count": 35
+    },
+    {
+      "symbol": "PEPEUSDT",
+      "hour": 16,
+      "transaction_count": 34
+    },
+    {
+      "symbol": "XBTEUR",
+      "hour": 14,
+      "transaction_count": 33
+    },
+    {
+      "symbol": "PEPEUSDT",
+      "hour": 14,
+      "transaction_count": 33
+    },
+    {
+      "symbol": "SUIUSD",
+      "hour": 16,
+      "transaction_count": 32
+    },
+    {
+      "symbol": "XRPUSDT",
+      "hour": 14,
+      "transaction_count": 32
+    },
+    {
+      "symbol": "PEPEUSD",
+      "hour": 15,
+      "transaction_count": 31
+    },
+    {
+      "symbol": "PEPEUSD",
+      "hour": 12,
+      "transaction_count": 29
+    },
+    {
+      "symbol": "BCHUSDT",
+      "hour": 15,
+      "transaction_count": 28
+    },
+    {
+      "symbol": "BCHUSDT",
+      "hour": 16,
+      "transaction_count": 28
+    },
+    {
+      "symbol": "SUIUSDT",
+      "hour": 12,
+      "transaction_count": 28
+    },
+    {
+      "symbol": "SUIUSDT",
+      "hour": 14,
+      "transaction_count": 28
+    },
+    {
+      "symbol": "MATICUSDT",
+      "hour": 14,
+      "transaction_count": 28
+    },
+    {
+      "symbol": "ENAUSDT",
+      "hour": 14,
+      "transaction_count": 26
+    },
+    {
+      "symbol": "MATICUSDT",
+      "hour": 12,
+      "transaction_count": 26
+    },
+    {
+      "symbol": "BMEX_USDT",
+      "hour": 15,
+      "transaction_count": 25
+    },
+    {
+      "symbol": "PEPEUSDT",
+      "hour": 15,
+      "transaction_count": 23
+    },
+    {
+      "symbol": "XRPUSDT",
+      "hour": 12,
+      "transaction_count": 21
+    },
+    {
+      "symbol": "SUIUSD",
+      "hour": 14,
+      "transaction_count": 20
+    },
+    {
+      "symbol": "CYBERUSDT",
+      "hour": 13,
+      "transaction_count": 19
+    },
+    {
+      "symbol": "SUIUSDT",
+      "hour": 15,
+      "transaction_count": 19
+    },
+    {
+      "symbol": "XBTEUR",
+      "hour": 16,
+      "transaction_count": 18
+    },
+    {
+      "symbol": "ORDIUSD",
+      "hour": 16,
+      "transaction_count": 18
+    },
+    {
+      "symbol": "BMEX_USDT",
+      "hour": 13,
+      "transaction_count": 17
+    },
+    {
+      "symbol": "XBTZ24",
+      "hour": 16,
+      "transaction_count": 17
+    },
+    {
+      "symbol": "AXSUSD",
+      "hour": 15,
+      "transaction_count": 17
+    },
+    {
+      "symbol": "LINKUSDT",
+      "hour": 15,
+      "transaction_count": 16
+    },
+    {
+      "symbol": "WIFUSDT",
+      "hour": 14,
+      "transaction_count": 16
+    },
+    {
+      "symbol": "SHIBUSD",
+      "hour": 12,
+      "transaction_count": 15
+    },
+    {
+      "symbol": "BCHUSDT",
+      "hour": 14,
+      "transaction_count": 14
+    },
+    {
+      "symbol": "LINKUSDT",
+      "hour": 14,
+      "transaction_count": 14
+    },
+    {
+      "symbol": "XBTZ24",
+      "hour": 12,
+      "transaction_count": 14
+    },
+    {
+      "symbol": "APEUSDT",
+      "hour": 15,
+      "transaction_count": 14
+    },
+    {
+      "symbol": "XAUTUSD",
+      "hour": 15,
+      "transaction_count": 13
+    },
+    {
+      "symbol": "ADAUSDT",
+      "hour": 15,
+      "transaction_count": 13
+    },
+    {
+      "symbol": "XBT_USDT",
+      "hour": 12,
+      "transaction_count": 13
+    },
+    {
+      "symbol": "PEPEUSDT",
+      "hour": 12,
+      "transaction_count": 13
+    },
+    {
+      "symbol": "AXSUSD",
+      "hour": 14,
+      "transaction_count": 13
+    },
+    {
+      "symbol": "LUNCUSDT",
+      "hour": 13,
+      "transaction_count": 12
+    },
+    {
+      "symbol": "WLDUSDT",
+      "hour": 12,
+      "transaction_count": 12
+    },
+    {
+      "symbol": "WIFUSDT",
+      "hour": 13,
+      "transaction_count": 12
+    },
+    {
+      "symbol": "BCHUSDT",
+      "hour": 12,
+      "transaction_count": 11
+    },
+    {
+      "symbol": "LUNCUSDT",
+      "hour": 14,
+      "transaction_count": 11
+    },
+    {
+      "symbol": "LINKUSDT",
+      "hour": 13,
+      "transaction_count": 11
+    },
+    {
+      "symbol": "XBT_USDT",
+      "hour": 15,
+      "transaction_count": 11
+    },
+    {
+      "symbol": "PEPEUSD",
+      "hour": 14,
+      "transaction_count": 11
+    },
+    {
+      "symbol": "FILUSD",
+      "hour": 12,
+      "transaction_count": 11
+    },
+    {
+      "symbol": "WLDUSDT",
+      "hour": 13,
+      "transaction_count": 10
+    },
+    {
+      "symbol": "ADAUSDT",
+      "hour": 16,
+      "transaction_count": 10
+    },
+    {
+      "symbol": "ADAUSDT",
+      "hour": 13,
+      "transaction_count": 10
+    },
+    {
+      "symbol": "DOTUSDT",
+      "hour": 12,
+      "transaction_count": 10
+    },
+    {
+      "symbol": "NEARUSD",
+      "hour": 12,
+      "transaction_count": 10
+    },
+    {
+      "symbol": "WUSDT",
+      "hour": 16,
+      "transaction_count": 10
+    },
+    {
+      "symbol": "FILUSDT",
+      "hour": 12,
+      "transaction_count": 10
+    },
+    {
+      "symbol": "BCHUSDT",
+      "hour": 13,
+      "transaction_count": 9
+    },
+    {
+      "symbol": "TIAUSDT",
+      "hour": 12,
+      "transaction_count": 9
+    },
+    {
+      "symbol": "WLDUSDT",
+      "hour": 16,
+      "transaction_count": 9
+    },
+    {
+      "symbol": "TRXUSDT",
+      "hour": 12,
+      "transaction_count": 9
+    },
+    {
+      "symbol": "ETHM24",
+      "hour": 14,
+      "transaction_count": 9
+    },
+    {
+      "symbol": "CROUSD",
+      "hour": 16,
+      "transaction_count": 8
+    },
+    {
+      "symbol": "ARBUSD",
+      "hour": 15,
+      "transaction_count": 8
+    },
+    {
+      "symbol": "XBTEUR",
+      "hour": 12,
+      "transaction_count": 8
+    },
+    {
+      "symbol": "XBTM24",
+      "hour": 12,
+      "transaction_count": 8
+    },
+    {
+      "symbol": "CYBERUSDT",
+      "hour": 14,
+      "transaction_count": 8
+    },
+    {
+      "symbol": "AVAXUSDT",
+      "hour": 13,
+      "transaction_count": 8
+    },
+    {
+      "symbol": "LDOUSD",
+      "hour": 16,
+      "transaction_count": 8
+    },
+    {
+      "symbol": "FILUSDT",
+      "hour": 13,
+      "transaction_count": 8
+    },
+    {
+      "symbol": "APTUSD",
+      "hour": 14,
+      "transaction_count": 7
+    },
+    {
+      "symbol": "LUNCUSDT",
+      "hour": 15,
+      "transaction_count": 7
+    },
+    {
+      "symbol": "MANTAUSDT",
+      "hour": 13,
+      "transaction_count": 7
+    },
+    {
+      "symbol": "WIFUSDT",
+      "hour": 16,
+      "transaction_count": 7
+    },
+    {
+      "symbol": "XBT_USDT",
+      "hour": 16,
+      "transaction_count": 7
+    },
+    {
+      "symbol": "BMEX_USDT",
+      "hour": 16,
+      "transaction_count": 7
+    },
+    {
+      "symbol": "ETHUSDM24",
+      "hour": 13,
+      "transaction_count": 7
+    },
+    {
+      "symbol": "AXSUSD",
+      "hour": 13,
+      "transaction_count": 7
+    },
+    {
+      "symbol": "DOTUSDT",
+      "hour": 13,
+      "transaction_count": 6
+    },
+    {
+      "symbol": "JUPUSDT",
+      "hour": 15,
+      "transaction_count": 6
+    },
+    {
+      "symbol": "PEPEUSD",
+      "hour": 16,
+      "transaction_count": 6
+    },
+    {
+      "symbol": "APEUSDT",
+      "hour": 14,
+      "transaction_count": 6
+    },
+    {
+      "symbol": "APEUSDT",
+      "hour": 16,
+      "transaction_count": 6
+    },
+    {
+      "symbol": "MEWUSDT",
+      "hour": 13,
+      "transaction_count": 5
+    },
+    {
+      "symbol": "GMTUSD",
+      "hour": 13,
+      "transaction_count": 5
+    },
+    {
+      "symbol": "APTUSD",
+      "hour": 12,
+      "transaction_count": 5
+    },
+    {
+      "symbol": "TIAUSDT",
+      "hour": 15,
+      "transaction_count": 5
+    },
+    {
+      "symbol": "CYBERUSDT",
+      "hour": 12,
+      "transaction_count": 5
+    },
+    {
+      "symbol": "DYMUSDT",
+      "hour": 14,
+      "transaction_count": 5
+    },
+    {
+      "symbol": "BMEX_USDT",
+      "hour": 12,
+      "transaction_count": 5
+    },
+    {
+      "symbol": "AVAXUSDT",
+      "hour": 14,
+      "transaction_count": 5
+    },
+    {
+      "symbol": "FTTUSDT",
+      "hour": 12,
+      "transaction_count": 5
+    },
+    {
+      "symbol": "MERLUSD",
+      "hour": 15,
+      "transaction_count": 5
+    },
+    {
+      "symbol": "GASUSDT",
+      "hour": 12,
+      "transaction_count": 4
+    },
+    {
+      "symbol": "ARKUSDT",
+      "hour": 12,
+      "transaction_count": 4
+    },
+    {
+      "symbol": "APTUSD",
+      "hour": 16,
+      "transaction_count": 4
+    },
+    {
+      "symbol": "TIAUSDT",
+      "hour": 13,
+      "transaction_count": 4
+    },
+    {
+      "symbol": "BNBUSDT",
+      "hour": 15,
+      "transaction_count": 4
+    },
+    {
+      "symbol": "SAGAUSDT",
+      "hour": 14,
+      "transaction_count": 4
+    },
+    {
+      "symbol": "USDTUSDC",
+      "hour": 13,
+      "transaction_count": 4
+    },
+    {
+      "symbol": "GLMRUSDT",
+      "hour": 12,
+      "transaction_count": 4
+    },
+    {
+      "symbol": "LINKUSDT",
+      "hour": 16,
+      "transaction_count": 4
+    },
+    {
+      "symbol": "ADAUSDT",
+      "hour": 12,
+      "transaction_count": 4
+    },
+    {
+      "symbol": "EIGENUSDTK24",
+      "hour": 16,
+      "transaction_count": 4
+    },
+    {
+      "symbol": "XBTETH",
+      "hour": 14,
+      "transaction_count": 4
+    },
+    {
+      "symbol": "DOTUSDT",
+      "hour": 15,
+      "transaction_count": 4
+    },
+    {
+      "symbol": "PORTALUSDT",
+      "hour": 13,
+      "transaction_count": 4
+    },
+    {
+      "symbol": "AEVOUSDTZ24",
+      "hour": 12,
+      "transaction_count": 4
+    },
+    {
+      "symbol": "FILUSD",
+      "hour": 13,
+      "transaction_count": 4
+    },
+    {
+      "symbol": "SHIBUSD",
+      "hour": 13,
+      "transaction_count": 4
+    },
+    {
+      "symbol": "MBLUSDT",
+      "hour": 12,
+      "transaction_count": 4
+    },
+    {
+      "symbol": "POLYXUSDT",
+      "hour": 12,
+      "transaction_count": 4
+    },
+    {
+      "symbol": "AXSUSD",
+      "hour": 16,
+      "transaction_count": 4
+    },
+    {
+      "symbol": "FILUSDT",
+      "hour": 15,
+      "transaction_count": 4
+    },
+    {
+      "symbol": "DFIUSDT",
+      "hour": 12,
+      "transaction_count": 4
+    },
+    {
+      "symbol": "MERLUSD",
+      "hour": 12,
+      "transaction_count": 4
+    },
+    {
+      "symbol": "APEUSDT",
+      "hour": 12,
+      "transaction_count": 4
+    },
+    {
+      "symbol": "MLKUSDT",
+      "hour": 12,
+      "transaction_count": 3
+    },
+    {
+      "symbol": "CROUSD",
+      "hour": 15,
+      "transaction_count": 3
+    },
+    {
+      "symbol": "APTUSD",
+      "hour": 15,
+      "transaction_count": 3
+    },
+    {
+      "symbol": "100BONKUSDT",
+      "hour": 13,
+      "transaction_count": 3
+    },
+    {
+      "symbol": "BNBUSDT",
+      "hour": 14,
+      "transaction_count": 3
+    },
+    {
+      "symbol": "PARCLUSDTK24",
+      "hour": 12,
+      "transaction_count": 3
+    },
+    {
+      "symbol": "BNBUSDT",
+      "hour": 12,
+      "transaction_count": 3
+    },
+    {
+      "symbol": "BONK_USDT",
+      "hour": 15,
+      "transaction_count": 3
+    },
+    {
+      "symbol": "BLURUSD",
+      "hour": 15,
+      "transaction_count": 3
+    },
+    {
+      "symbol": "MATIC_USDT",
+      "hour": 13,
+      "transaction_count": 3
+    },
+    {
+      "symbol": "WUSDTZ24",
+      "hour": 12,
+      "transaction_count": 3
+    },
+    {
+      "symbol": "ACEUSDT",
+      "hour": 13,
+      "transaction_count": 3
+    },
+    {
+      "symbol": "AERGOUSDT",
+      "hour": 12,
+      "transaction_count": 3
+    },
+    {
+      "symbol": "SNTUSDT",
+      "hour": 12,
+      "transaction_count": 3
+    },
+    {
+      "symbol": "FETUSD",
+      "hour": 12,
+      "transaction_count": 3
+    },
+    {
+      "symbol": "OKBUSDT",
+      "hour": 12,
+      "transaction_count": 3
+    },
+    {
+      "symbol": "JUPUSDT",
+      "hour": 14,
+      "transaction_count": 3
+    },
+    {
+      "symbol": "BOMEUSDT",
+      "hour": 12,
+      "transaction_count": 3
+    },
+    {
+      "symbol": "FILUSD",
+      "hour": 15,
+      "transaction_count": 3
+    },
+    {
+      "symbol": "AGIUSDT",
+      "hour": 12,
+      "transaction_count": 3
+    },
+    {
+      "symbol": "AVAXUSDT",
+      "hour": 16,
+      "transaction_count": 3
+    },
+    {
+      "symbol": "TNSRUSDT",
+      "hour": 15,
+      "transaction_count": 3
+    },
+    {
+      "symbol": "AXSUSD",
+      "hour": 12,
+      "transaction_count": 3
+    },
+    {
+      "symbol": "ONDOUSDT",
+      "hour": 12,
+      "transaction_count": 3
+    },
+    {
+      "symbol": "FILUSDT",
+      "hour": 14,
+      "transaction_count": 3
+    },
+    {
+      "symbol": "ETHM24",
+      "hour": 16,
+      "transaction_count": 3
+    },
+    {
+      "symbol": "USTCUSDT",
+      "hour": 12,
+      "transaction_count": 3
+    },
+    {
+      "symbol": "APEUSDT",
+      "hour": 13,
+      "transaction_count": 3
+    },
+    {
+      "symbol": "SHIBUSDT",
+      "hour": 16,
+      "transaction_count": 3
+    },
+    {
+      "symbol": "XPLAUSDT",
+      "hour": 12,
+      "transaction_count": 2
+    },
+    {
+      "symbol": "APTUSD",
+      "hour": 13,
+      "transaction_count": 2
+    },
+    {
+      "symbol": "MINAUSDT",
+      "hour": 13,
+      "transaction_count": 2
+    },
+    {
+      "symbol": "100SATSUSD",
+      "hour": 12,
+      "transaction_count": 2
+    },
+    {
+      "symbol": "ENAUSDT",
+      "hour": 13,
+      "transaction_count": 2
+    },
+    {
+      "symbol": "FTMUSD",
+      "hour": 16,
+      "transaction_count": 2
+    },
+    {
+      "symbol": "FTMUSD",
+      "hour": 14,
+      "transaction_count": 2
+    },
+    {
+      "symbol": "WLDUSDT",
+      "hour": 14,
+      "transaction_count": 2
+    },
+    {
+      "symbol": "USDTUSDC",
+      "hour": 14,
+      "transaction_count": 2
+    },
+    {
+      "symbol": "BIGTIMEUSDT",
+      "hour": 13,
+      "transaction_count": 2
+    },
+    {
+      "symbol": "WIFUSDT",
+      "hour": 15,
+      "transaction_count": 2
+    },
+    {
+      "symbol": "DOTUSDT",
+      "hour": 14,
+      "transaction_count": 2
+    },
+    {
+      "symbol": "DOTUSDT",
+      "hour": 16,
+      "transaction_count": 2
+    },
+    {
+      "symbol": "XBT_USDT",
+      "hour": 13,
+      "transaction_count": 2
+    },
+    {
+      "symbol": "PORTALUSDT",
+      "hour": 12,
+      "transaction_count": 2
+    },
+    {
+      "symbol": "XBT_USDT",
+      "hour": 14,
+      "transaction_count": 2
+    },
+    {
+      "symbol": "BOMEUSDT",
+      "hour": 15,
+      "transaction_count": 2
+    },
+    {
+      "symbol": "BOMEUSDT",
+      "hour": 16,
+      "transaction_count": 2
+    },
+    {
+      "symbol": "FILUSD",
+      "hour": 14,
+      "transaction_count": 2
+    },
+    {
+      "symbol": "DYDXUSD",
+      "hour": 15,
+      "transaction_count": 2
+    },
+    {
+      "symbol": "DYMUSDT",
+      "hour": 13,
+      "transaction_count": 2
+    },
+    {
+      "symbol": "AXLUSDT",
+      "hour": 12,
+      "transaction_count": 2
+    },
+    {
+      "symbol": "ALTUSDT",
+      "hour": 13,
+      "transaction_count": 2
+    },
+    {
+      "symbol": "LUNAUSDT",
+      "hour": 14,
+      "transaction_count": 2
+    },
+    {
+      "symbol": "SOL_USDT",
+      "hour": 15,
+      "transaction_count": 2
+    },
+    {
+      "symbol": "OPUSD",
+      "hour": 16,
+      "transaction_count": 2
+    },
+    {
+      "symbol": "TRXUSDT",
+      "hour": 14,
+      "transaction_count": 2
+    },
+    {
+      "symbol": "TRXUSDT",
+      "hour": 13,
+      "transaction_count": 2
+    },
+    {
+      "symbol": "RBNUSDT",
+      "hour": 16,
+      "transaction_count": 2
+    },
+    {
+      "symbol": "XRP_USDT",
+      "hour": 13,
+      "transaction_count": 2
+    },
+    {
+      "symbol": "ETHUSDM24",
+      "hour": 15,
+      "transaction_count": 2
+    },
+    {
+      "symbol": "LDOUSD",
+      "hour": 12,
+      "transaction_count": 2
+    },
+    {
+      "symbol": "ETHUSDM24",
+      "hour": 16,
+      "transaction_count": 2
+    },
+    {
+      "symbol": "BMEXUSD",
+      "hour": 16,
+      "transaction_count": 2
+    },
+    {
+      "symbol": "JSTUSDT",
+      "hour": 12,
+      "transaction_count": 2
+    },
+    {
+      "symbol": "FLIPUSDT",
+      "hour": 12,
+      "transaction_count": 2
+    },
+    {
+      "symbol": "BLURUSDT",
+      "hour": 12,
+      "transaction_count": 2
+    },
+    {
+      "symbol": "BLURUSDT",
+      "hour": 15,
+      "transaction_count": 2
+    },
+    {
+      "symbol": "MERLUSD",
+      "hour": 16,
+      "transaction_count": 2
+    },
+    {
+      "symbol": "ETHM24",
+      "hour": 15,
+      "transaction_count": 2
+    },
+    {
+      "symbol": "NEARUSDT",
+      "hour": 12,
+      "transaction_count": 2
+    },
+    {
+      "symbol": "PYTHUSDT",
+      "hour": 13,
+      "transaction_count": 2
+    },
+    {
+      "symbol": "CROUSD",
+      "hour": 13,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "MEWUSDT",
+      "hour": 12,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "CROUSD",
+      "hour": 12,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "CROUSD",
+      "hour": 14,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "ETH_XBT",
+      "hour": 15,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "INJUSDT",
+      "hour": 12,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "INJUSDT",
+      "hour": 16,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "LUNCUSDT",
+      "hour": 16,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "100BONKUSDT",
+      "hour": 15,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "TIAUSDT",
+      "hour": 14,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "SLERFUSDT",
+      "hour": 14,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "XBTUSDTM24",
+      "hour": 15,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "SAGAUSDT",
+      "hour": 12,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "ENAUSDT",
+      "hour": 12,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "WLDUSDT",
+      "hour": 15,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "BIGTIMEUSDT",
+      "hour": 14,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "ACEUSDT",
+      "hour": 16,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "MYROUSDT",
+      "hour": 13,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "MANTAUSDT",
+      "hour": 14,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "STRKUSDT",
+      "hour": 12,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "STRKUSDT",
+      "hour": 13,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "PIXELUSDT",
+      "hour": 13,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "XBTETH",
+      "hour": 15,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "EIGENUSDTK24",
+      "hour": 15,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "FETUSD",
+      "hour": 14,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "ZETAUSDT",
+      "hour": 15,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "ZETAUSDT",
+      "hour": 16,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "FLRUSD",
+      "hour": 12,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "FETUSD",
+      "hour": 15,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "SEIUSDT",
+      "hour": 14,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "SUPERUSDT",
+      "hour": 12,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "JUPUSDT",
+      "hour": 16,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "ORDIUSD",
+      "hour": 12,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "ARBUSDT",
+      "hour": 12,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "ARBUSDT",
+      "hour": 15,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "DYDXUSD",
+      "hour": 13,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "DYDXUSD",
+      "hour": 14,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "DYMUSDT",
+      "hour": 15,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "DYMUSDT",
+      "hour": 12,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "DYDXUSD",
+      "hour": 12,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "LUNAUSDT",
+      "hour": 15,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "LUNAUSDT",
+      "hour": 13,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "SHIBUSD",
+      "hour": 14,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "LDOUSDT",
+      "hour": 15,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "LDOUSDT",
+      "hour": 14,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "AVAXUSDT",
+      "hour": 15,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "ETHUSDM24",
+      "hour": 12,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "LDOUSD",
+      "hour": 15,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "ETHUSDM24",
+      "hour": 14,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "ETH_USDT",
+      "hour": 15,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "XAIUSDT",
+      "hour": 13,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "ETH_USDT",
+      "hour": 16,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "XAIUSDT",
+      "hour": 12,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "ONDOUSDT",
+      "hour": 16,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "EOSUSD",
+      "hour": 12,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "BLURUSDT",
+      "hour": 13,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "MERLUSD",
+      "hour": 13,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "WOOUSDT",
+      "hour": 12,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "KLAYUSD",
+      "hour": 15,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "SHIBUSDT",
+      "hour": 15,
+      "transaction_count": 1
+    },
+    {
+      "symbol": "REZUSDTK24",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "REZUSDTK24",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "REZUSDTK24",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "REZUSDTK24",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "REZUSDTK24",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "MEWUSDT",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "MEWUSDT",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "GMTUSD",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "MEWUSDT",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "GMTUSD",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "GMTUSD",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "GMTUSD",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "INJUSDT",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "ETH_XBT",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "ADAM24",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "INJUSDT",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "ETH_XBT",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "ADAM24",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "ADAM24",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "ETH_XBT",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "ADAM24",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "INJUSDT",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "ETH_XBT",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "ADAM24",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "ARBUSD",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "ARBUSD",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "LUNCUSDT",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "ARBUSD",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "BLASTUSDTZ24",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "TIAUSDT",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "MINAUSDT",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "BLASTUSDTZ24",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "100BONKUSDT",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "MINAUSDT",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "MINAUSDT",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "UNI_USDT",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "BLASTUSDTZ24",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "UNI_USDT",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "100BONKUSDT",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "BLASTUSDTZ24",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "MINAUSDT",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "UNI_USDT",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "UNI_USDT",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "BLASTUSDTZ24",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "100BONKUSDT",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "UNI_USDT",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "100SATSUSD",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "BNBUSDT",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "BNBUSDT",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "ATOM_USDT",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "ATOM_USDT",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "100SATSUSD",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "100SATSUSD",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "ATOM_USDT",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "ATOM_USDT",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "ATOM_USDT",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "100SATSUSD",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "XRPM24",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "BONK_USDT",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "XRPM24",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "BONK_USDT",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "BONK_USDT",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "XRPM24",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "XRPM24",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "XRPM24",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "BONK_USDT",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "XBTUSDTM24",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "SLERFUSDT",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "SLERFUSDT",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "SLERFUSDT",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "SLERFUSDT",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "XBTUSDTM24",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "XBTUSDTM24",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "XBTUSDTM24",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "APE_USDT",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "APE_USDT",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "APE_USDT",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "APE_USDT",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "SAGAUSDT",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "ENAUSDT",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "SAGAUSDT",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "SAGAUSDT",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "APE_USDT",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "ENAUSDT",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "MEMEUSDT",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "MEMEUSDT",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "BLURUSD",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "USDTUSDC",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "FTMUSD",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "USDTUSDC",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "FTMUSD",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "MEMEUSDT",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "USDTUSDC",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "BLURUSD",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "MEMEUSDT",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "BLURUSD",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "BLURUSD",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "FTMUSD",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "MEMEUSDT",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "MATIC_USDT",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "MATIC_USDT",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "MATIC_USDT",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "MATIC_USDT",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "XAUTUSD",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "GMTUSDT",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "AXS_USDT",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "XAUTUSD",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "GMTUSDT",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "GMTUSDT",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "AXS_USDT",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "AXS_USDT",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "GMTUSDT",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "XAUTUSD",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "AXS_USDT",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "AXS_USDT",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "GMTUSDT",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "XAUTUSD",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "BIGTIMEUSDT",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "BIGTIMEUSDT",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "BIGTIMEUSDT",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "ACEUSDT",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "ACEUSDT",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "XRDUSDT",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "ACEUSDT",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "XRDUSDT",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "XRDUSDT",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "XRDUSDT",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "XRDUSDT",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "OPUSDT",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "MYROUSDT",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "OPUSDT",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "MYROUSDT",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "OPUSDT",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "MYROUSDT",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "OPUSDT",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "MYROUSDT",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "OPUSDT",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "MANTAUSDT",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "MANTAUSDT",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "MANTAUSDT",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "P_SBFPARDONF25",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "P_SBFPARDONF25",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "P_SBFPARDONF25",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "P_SBFPARDONF25",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "STRKUSDT",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "P_SBFPARDONF25",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "PIXELUSDT",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "PIXELUSDT",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "STRKUSDT",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "STRKUSDT",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "PIXELUSDT",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "PIXELUSDT",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "LINK_USDT",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "LINK_USDT",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "LINK_USDT",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "LINK_USDT",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "WIFUSDT",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "LINK_USDT",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "XBTETH",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "EIGENUSDTK24",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "EIGENUSDTK24",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "XBTETH",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "XBTETH",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "EIGENUSDTK24",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "PORTALUSDT",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "PORTALUSDT",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "ZETAUSDT",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "FLRUSD",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "FETUSD",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "ZETAUSDT",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "FLRUSD",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "ZETAUSDT",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "FETUSD",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "PORTALUSDT",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "FLRUSD",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "FLRUSD",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "JUPUSDT",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "SUPERUSDT",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "ORBSUSDT",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "SUPERUSDT",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "SUPERUSDT",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "SUPERUSDT",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "ORBSUSDT",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "ORBSUSDT",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "JUPUSDT",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "SEIUSDT",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "SEIUSDT",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "SEIUSDT",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "SEIUSDT",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "ORBSUSDT",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "ORBSUSDT",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "BOMEUSDT",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "BOMEUSDT",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "FILUSD",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "JTOUSDT",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "JTOUSDT",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "JTOUSDT",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "JTOUSDT",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "JTOUSDT",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "ORDIUSD",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "LUNAUSD",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "CYBERUSDT",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "CYBERUSDT",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "LUNAUSD",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "ORDIUSD",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "LUNAUSD",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "LUNAUSD",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "ARBUSDT",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "LUNAUSD",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "ARBUSDT",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "DYMUSDT",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "ARBUSDT",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "DYDXUSD",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "ORDIUSD",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "ALTUSDT",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "ALTUSDT",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "ALTUSDT",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "ALTUSDT",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "LUNAUSDT",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "LUNAUSDT",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "SOL_USDT",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "SOL_USDT",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "SOL_USDT",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "SOL_USDT",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "LDOUSDT",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "LDOUSDT",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "LDOUSDT",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "SHIBUSD",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "SHIBUSD",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "AVAXUSDT",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "OPUSD",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "OPUSD",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "OPUSD",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "TNSRUSDT",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "TNSRUSDT",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "OPUSD",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "TNSRUSDT",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "TNSRUSDT",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "WUSDT",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "WUSDT",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "WUSDT",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "WUSDT",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "RBNUSDT",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "TRXUSDT",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "AEVOUSDT",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "AEVOUSDT",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "TRXUSDT",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "RBNUSDT",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "AEVOUSDT",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "AEVOUSDT",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "RBNUSDT",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "RBNUSDT",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "AEVOUSDT",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "P_FTXZ26",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "XRP_USDT",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "XRP_USDT",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "P_FTXZ26",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "XRP_USDT",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "XRP_USDT",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "P_FTXZ26",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "P_FTXZ26",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "LDOUSD",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "P_FTXZ26",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "LDOUSD",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "BMEXUSD",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "BMEXUSD",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "XAIUSDT",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "ETH_USDT",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "XAIUSDT",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "XAIUSDT",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "BMEXUSD",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "BMEXUSD",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "ETH_USDT",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "ETH_USDT",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "JSTUSDT",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "JSTUSDT",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "TRX_USDT",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "TRX_USDT",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "JSTUSDT",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "TRX_USDT",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "TRX_USDT",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "JSTUSDT",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "TRX_USDT",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "ONDOUSDT",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "ONDOUSDT",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "ONDOUSDT",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "EOSUSD",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "EOSUSD",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "EOSUSD",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "EOSUSD",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "XBTK24",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "XBTK24",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "XBTK24",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "XBTK24",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "FILUSDT",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "XBTK24",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "BLURUSDT",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "BLURUSDT",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "ETHM24",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "WOOUSDT",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "BMEXUSDT",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "ETHM24",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "WOOUSDT",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "BMEXUSDT",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "MERLUSD",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "WOOUSDT",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "WOOUSDT",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "BMEXUSDT",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "BMEXUSDT",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "BMEXUSDT",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "KLAYUSD",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "KLAYUSD",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "KLAYUSD",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "KLAYUSD",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "NEARUSDT",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "NEARUSDT",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "NEARUSDT",
+      "hour": 13,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "NEARUSDT",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "PYTHUSDT",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "TONUSD",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "PYTHUSDT",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "TONUSD",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "TONUSD",
+      "hour": 15,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "PYTHUSDT",
+      "hour": 14,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "PYTHUSDT",
+      "hour": 12,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "TONUSD",
+      "hour": 16,
+      "transaction_count": 0
+    },
+    {
+      "symbol": "TONUSD",
+      "hour": 13,
+      "transaction_count": 0
+    }
+  ]
+}
