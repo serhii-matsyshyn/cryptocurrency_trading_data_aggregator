@@ -21,6 +21,8 @@ until is_cassandra_healthy; do
     sleep 5
 done
 
+sleep 15
+
 # Execute the desired command
 cat schema_creation.cql | sudo docker exec -i cassandra1 cqlsh
 python3 import_yaml_to_consul.py
