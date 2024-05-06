@@ -5,6 +5,27 @@ Author: Serhii Matsyshyn (https://github.com/serhii-matsyshyn) <br>
 ## System architecture diagram
 ![Cryptocurrency_trading_data_aggregator_system_architecture_3.drawio.png](data%2Fimages%2FCryptocurrency_trading_data_aggregator_system_architecture_3.drawio.png)
 
+
+## Roles of microservices:
+
+- WS live data retrieve service - constantly, in real time, receives data from the websocket of the cryptocurrency exchange (data received with a high frequency). Stores data in Cassandra Cluster.
+
+Part A:
+- Scheduled report compute service - uses Apache Spark connected to Cassandra Cluster to generate advanced data reports every hour. Stores advanced reports in MongoDB. MongoDB (rather than Cassandra) is chosen here because MongoDB is optimized and more efficient for heavy read loads, while Cassandra is better for heavy write loads.
+- Precomputed report data retrieve service - a microservice that receives advanced reports from MongoDB. The Facade Service and the Precomputed Report Data Retrieve Service are separated because it contributes to modularity, scalability, and facilitates independent maintenance and upgrade of microservices.
+
+Part B:
+- Streaming (live) data retrieve service -  
+  The service responsible for getting the latest data from the Cassandra Cluster.  
+  Since sum trades last n minutes and top n cryptos last hour have a specific behavior (necessary in trading), namely, they return the result excluding the data of the last minute (since it is not yet considered "closed"), then these queries and responses are cached using Hazelcast.  
+  Thus, the unnecessary load on the Cassandra Cluster is reduced and the speed of operation is increased, which is quite critical, since Part B is a highly loaded (with a possible large number of requests from clients).  
+<br><br>
+  Facade Service and Streaming (live) data retrieve service exchange data based on the Publish-Subscribe pattern. That is, there is one queue where Facade Service clients send the necessary requests, one of the free Streaming (live) data retrieve microservices processes it and returns a response to the Hazelcast Topic, which was previously defined and provided together with the Facade Service client.  
+  The Publish-Subscribe pattern is used to reduce latency during the internal interaction of microservices - since, in the case of HTTP, you need to constantly establish and stop connections, this implementation can avoid this.  
+  This microservice can be scaled as simply and quickly as possible by launching additional instances of the microservice.  
+
+- Facade Service - provides an HTTP Rest API to the client. You can find example requests [here](facade_service/Requests.http).
+
 ## 🖥 Usage
 
 ### Requirements
