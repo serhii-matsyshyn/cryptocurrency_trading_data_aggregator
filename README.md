@@ -22,7 +22,7 @@ Data the project provides can be useful for automatic trading bots creation.
 
 Part A:
 - Scheduled report compute service 
-  - Uses Apache Spark connected to Cassandra Cluster to generate advanced data reports every hour.
+  - Uses Apache Spark connected to Cassandra Cluster (replication factor 3) to generate advanced data reports every hour.
   - Apache Spark is chosen because it is optimized for heavy and advanced data processing that is impossible with Cassandra alone.
   - Stores advanced reports in MongoDB.
   - MongoDB (rather than Cassandra) is chosen here because MongoDB is optimized and more efficient for heavy read loads, while Cassandra is better for heavy write loads.
