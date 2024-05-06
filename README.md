@@ -3,7 +3,7 @@
 Author: Serhii Matsyshyn (https://github.com/serhii-matsyshyn) <br>
 
 ## System architecture diagram
-![Cryptocurrency_trading_data_aggregator_system_architecture_2.drawio.png](data%2Fimages%2FCryptocurrency_trading_data_aggregator_system_architecture_2.drawio.png)
+![Cryptocurrency_trading_data_aggregator_system_architecture_3.drawio.png](data%2Fimages%2FCryptocurrency_trading_data_aggregator_system_architecture_3.drawio.png)
 
 ## 🖥 Usage
 
