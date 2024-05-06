@@ -5,86 +5,6 @@ Author: Serhii Matsyshyn (https://github.com/serhii-matsyshyn) <br>
 ## System architecture diagram
 ![Cryptocurrency_trading_data_aggregator_system_architecture_2.drawio.png](data%2Fimages%2FCryptocurrency_trading_data_aggregator_system_architecture_2.drawio.png)
 
-[//]: # (## 🖥 Usage)
-
-[//]: # ()
-[//]: # (### consul)
-
-[//]: # (```shell)
-
-[//]: # (cd consul)
-
-[//]: # (sudo docker-compose -f docker-compose-consul.yml up)
-
-[//]: # (```)
-
-[//]: # ()
-[//]: # (### ws_live_data_retrieve_service)
-
-[//]: # (```shell)
-
-[//]: # (cd ws_live_data_retrieve_service)
-
-[//]: # (sudo docker-compose -f docker-compose-cassandra-cluster.yml up)
-
-[//]: # (cat schema_creation.cql | sudo docker exec -i cassandra1 cqlsh)
-
-[//]: # (python3 ws_live_data_retrieve_service.py)
-
-[//]: # (```)
-
-[//]: # ()
-[//]: # (### sheduled_report_compute_service)
-
-[//]: # (```shell)
-
-[//]: # (cd sheduled_report_compute_service)
-
-[//]: # (docker-compose -f docker-compose-mongodb-spark.yml up)
-
-[//]: # (python3 sheduled_report_compute_service.py)
-
-[//]: # (```)
-
-[//]: # ()
-[//]: # (### precomputed_report_data_retrieve_service)
-
-[//]: # (```shell)
-
-[//]: # (cd precomputed_report_data_retrieve_service)
-
-[//]: # (python3 precomputed_report_data_retrieve_controller.py)
-
-[//]: # (```)
-
-[//]: # ()
-[//]: # (### live_data_retrieve_service)
-
-[//]: # (```shell)
-
-[//]: # (cd live_data_retrieve_service)
-
-[//]: # (docker-compose -f docker-compose-hazelcast.yml up)
-
-[//]: # (python3 live_data_retrieve_controller.py -p 8004)
-
-[//]: # (python3 live_data_retrieve_controller.py -p 8005)
-
-[//]: # (python3 live_data_retrieve_controller.py -p 8006)
-
-[//]: # (```)
-
-[//]: # ()
-[//]: # (### facade_service)
-
-[//]: # (```shell)
-
-[//]: # (cd facade_service)
-
-[//]: # (python3 facade_controller.py)
-
-[//]: # (```)
-
 ## 🖥 Usage
 
 ### Requirements
@@ -104,41 +24,47 @@ cd infrastructure_services
 ./start-infrastructure-services.sh
 ```
 
-To stop infrastructure services:
+### Docker compose run all services
+It is possible to use the following command to run all services, but it may cause docker-compose and build merge issues:
 ```shell
-sudo docker-compose -f docker-compose-infrastructure.yml down
+sudo docker-compose -f ws_live_data_retrieve_service/docker-compose.yml \
+                    -f sheduled_report_compute_service/docker-compose.yml \
+                    -f precomputed_report_data_retrieve_service/docker-compose.yml \
+                    -f live_data_retrieve_service/docker-compose.yml \
+                    -f facade_service/docker-compose.yml \
+up
 ```
 
-### ws_live_data_retrieve_service
+For an easy debug, you can run each service separately (it is recommended to use this method):
 ```shell
-cd ws_live_data_retrieve_service
-python3 ws_live_data_retrieve_service.py
+sudo docker-compose -f ws_live_data_retrieve_service/docker-compose.yml up -d
+sudo docker-compose -f sheduled_report_compute_service/docker-compose.yml up -d
+sudo docker-compose -f precomputed_report_data_retrieve_service/docker-compose.yml up -d
+sudo docker-compose -f live_data_retrieve_service/docker-compose.yml up -d
+sudo docker-compose -f facade_service/docker-compose.yml up -d
 ```
 
-### sheduled_report_compute_service
+### To attach to logs of service:
 ```shell
-cd sheduled_report_compute_service
-python3 sheduled_report_compute_service.py
+sudo docker container logs -f ws-live-data-retrieve-service
 ```
 
-### precomputed_report_data_retrieve_service
+### To stop all services:
 ```shell
-cd precomputed_report_data_retrieve_service
-python3 precomputed_report_data_retrieve_controller.py
+sudo docker-compose -f ws_live_data_retrieve_service/docker-compose.yml down
+sudo docker-compose -f sheduled_report_compute_service/docker-compose.yml down
+sudo docker-compose -f precomputed_report_data_retrieve_service/docker-compose.yml down
+sudo docker-compose -f live_data_retrieve_service/docker-compose.yml down
+sudo docker-compose -f facade_service/docker-compose.yml down
+sudo docker-compose -f infrastructure_services/docker-compose-infrastructure.yml down
 ```
-
-### live_data_retrieve_service
+### To rebuild all services:
 ```shell
-cd live_data_retrieve_service
-python3 live_data_retrieve_controller.py -p 8004
-python3 live_data_retrieve_controller.py -p 8005
-python3 live_data_retrieve_controller.py -p 8006
-```
-
-### facade_service
-```shell
-cd facade_service
-python3 facade_controller.py
+sudo docker-compose -f ws_live_data_retrieve_service/docker-compose.yml build --no-cache
+sudo docker-compose -f sheduled_report_compute_service/docker-compose.yml build --no-cache
+sudo docker-compose -f precomputed_report_data_retrieve_service/docker-compose.yml build --no-cache
+sudo docker-compose -f live_data_retrieve_service/docker-compose.yml build --no-cache
+sudo docker-compose -f facade_service/docker-compose.yml build --no-cache
 ```
 
 ## REST API
@@ -166,6 +92,9 @@ Part B: A set of REST APIs that will return the results of ad-hoc queries. User 
 and other services ports
 - Hazelcast: 5701
 - Hazelcast Management Center: 8180
+- Consul: 8500
+- Spark: 8080
+- MongoDB: 27017
 
 ## 📌 Nota bene
 Project was developed and tested on Ubuntu 22.04.3 LTS.  
