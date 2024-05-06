@@ -20,7 +20,6 @@ logger.setLevel(logging.DEBUG)
 class CryptoStatistics:
     def __init__(self, consul):
         self.consul = consul
-        print(self.consul.get_config("spark/master"))
         self.spark = SparkSession.builder \
             .appName("CryptoStatistics") \
             .config("spark.master", self.consul.get_config("spark/master")) \
@@ -67,7 +66,7 @@ class CryptoStatistics:
             .agg(F.sum("trades").alias("transaction_count")) \
             .filter(
             (F.col("hour") >= F.hour(F.current_timestamp()) - 6)
-            # & (F.col("hour") != F.hour(F.current_timestamp()))  # FIXME: uncomment this line
+            & (F.col("hour") != F.hour(F.current_timestamp()))
         ).sort(
             F.col("transaction_count").desc()
         ).toPandas()
@@ -78,7 +77,7 @@ class CryptoStatistics:
 
         df_filtered = df.filter(
             (F.date_trunc("hour", F.col("timestamp")) >= start_hour)
-            # & (F.date_trunc("hour", F.col("timestamp")) < F.date_trunc("hour", F.current_timestamp()))  # FIXME: uncomment this line
+            & (F.date_trunc("hour", F.col("timestamp")) < F.date_trunc("hour", F.current_timestamp()))
         )
 
         # Calculate total trading volume for each symbol
@@ -97,7 +96,7 @@ class CryptoStatistics:
         hourly_trades_volume = df \
             .withColumn("hour", F.hour("timestamp")) \
             .filter((F.col("timestamp") >= start_hour)
-                    # & (F.col("hour") != F.hour(F.current_timestamp()))  # FIXME: uncomment this line
+                    & (F.col("hour") != F.hour(F.current_timestamp()))
                     ) \
             .groupBy("hour") \
             .agg(F.sum("trades").alias("trade_count"), F.sum(volume_type).alias("total_volume")) \
