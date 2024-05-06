@@ -8,6 +8,8 @@ from cassandra.policies import DCAwareRoundRobinPolicy
 from cassandra.cluster import Cluster
 from cassandra.auth import PlainTextAuthProvider
 
+from live_data_retrieve_models import TopNCryptosLastHourModel, SumTradesLastNMinutesModel, LatestPricesModel
+
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -44,13 +46,14 @@ class LiveDataRetrieveRepository:
         result = self.session.execute(query)
         if result:
             result_value = result.one()
-            return {
-                'symbol': symbol,
-                'bidPrice': result_value.bidprice,
-                'askPrice': result_value.askprice,
-                'timestamp': result_value.timestamp
-            }
-        return {'symbol': symbol, 'bidPrice': 'N/A', 'askPrice': 'N/A', 'timestamp': 'N/A'}
+            result = LatestPricesModel(
+                symbol=symbol,
+                bidPrice=result_value.bidprice,
+                askPrice=result_value.askprice,
+                timestamp=result_value.timestamp
+            )
+            return result.to_dict()
+        return LatestPricesModel(symbol=symbol).to_dict()
 
     @staticmethod
     def default(o):
@@ -112,15 +115,16 @@ class LiveDataRetrieveRepository:
         total_trades = 0
         if query_result:
             total_trades = query_result.one().total_trades
-        result = {
-            'symbol': symbol,
-            'total_trades': total_trades,
-            'start_timestamp': start_timestamp,
-            'end_timestamp': end_timestamp
-        }
 
-        self.cache_result('sum_trades_last_n_minutes', start_timestamp, end_timestamp, symbol, n_minutes, result=result)
-        return result
+        result = SumTradesLastNMinutesModel(
+            symbol=symbol,
+            total_trades=total_trades,
+            start_timestamp=start_timestamp,
+            end_timestamp=end_timestamp
+        )
+
+        self.cache_result('sum_trades_last_n_minutes', start_timestamp, end_timestamp, symbol, n_minutes, result=result.to_dict())
+        return result.to_dict()
 
     def top_n_cryptos_last_hour(self, n, volume_type='foreignNotional'):
         end_timestamp = datetime.datetime.utcnow().replace(second=0, microsecond=0)
@@ -151,15 +155,14 @@ class LiveDataRetrieveRepository:
 
         top_cryptos = sorted(top_cryptos, key=lambda x: x[1], reverse=True)[:n]
 
-        result = {
-            'top_cryptos': {symbol: total_volume for symbol, total_volume in top_cryptos},
-            'volume_type': volume_type,
-            'start_timestamp': start_timestamp,
-            'end_timestamp': end_timestamp
-        }
-
-        self.cache_result('top_n_cryptos_last_hour', start_timestamp, end_timestamp, None, n, result=result, volume_type=volume_type)
-        return result
+        result = TopNCryptosLastHourModel(
+            top_cryptos={symbol: total_volume for symbol, total_volume in top_cryptos},
+            volume_type=volume_type,
+            start_timestamp=start_timestamp,
+            end_timestamp=end_timestamp
+        )
+        self.cache_result('top_n_cryptos_last_hour', start_timestamp, end_timestamp, None, n, result=result.to_dict(), volume_type=volume_type)
+        return result.to_dict()
 
 
 if __name__ == '__main__':
