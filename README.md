@@ -2,6 +2,13 @@
 
 Author: Serhii Matsyshyn (https://github.com/serhii-matsyshyn) <br>
 
+## Project short description
+Project aims to process and analyze real-time cryptocurrency trades data, while providing users stable access to processed data.  
+The platform continuously collects data through cryptocurrency exchange websocket and provides users with valuable statistics through REST API endpoints.  
+REST API is divided into two main categories - precomputed report data that is computed every hour, and live data that is either real-time or 1 minute cached data (depending on the endpoint).  
+  
+Data the project provides can be useful for automatic trading bots creation.
+
 ## System architecture diagram
 ![Cryptocurrency_trading_data_aggregator_system_architecture_3.drawio.png](data%2Fimages%2FCryptocurrency_trading_data_aggregator_system_architecture_3.drawio.png)
 
