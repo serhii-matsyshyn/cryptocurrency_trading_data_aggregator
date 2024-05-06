@@ -34,8 +34,10 @@ class CryptoStatistics:
 
         self.compute_and_save_statistics()  # Compute and save statistics for the first time
         self.scheduler = BackgroundScheduler()
-        self.scheduler.add_job(self.compute_and_save_statistics, 'interval', minutes=5)
-        # FIXME: change to minutes=60, and set fixed time ie each hour at 00 minutes
+
+        # self.scheduler.add_job(self.compute_and_save_statistics, 'interval', minutes=5)
+        self.scheduler.add_job(self.compute_and_save_statistics, 'cron', minute=0, second=1)
+
         self.scheduler.start()
 
     def compute_and_save_statistics(self):
