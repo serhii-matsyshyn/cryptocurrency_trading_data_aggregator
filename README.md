@@ -6,23 +6,31 @@ Author: Serhii Matsyshyn (https://github.com/serhii-matsyshyn) <br>
 ![Cryptocurrency_trading_data_aggregator_system_architecture_3.drawio.png](data%2Fimages%2FCryptocurrency_trading_data_aggregator_system_architecture_3.drawio.png)
 
 
-## Roles of microservices:
+## Roles of microservices and reasoning of the architecture
 
 - WS live data retrieve service - constantly, in real time, receives data from the websocket of the cryptocurrency exchange (data received with a high frequency). Stores data in Cassandra Cluster.
+  - It is subscribed and receives data from `tradeBin1m` and `quote` websocket Bitmex topics.  
+  - No additional processing is done on the data, it is stored in Cassandra in the same format as received from the exchange.
+  - Saving all the data allows for further detailed analysis and processing of the data.
 
 Part A:
-- Scheduled report compute service - uses Apache Spark connected to Cassandra Cluster to generate advanced data reports every hour. Stores advanced reports in MongoDB. MongoDB (rather than Cassandra) is chosen here because MongoDB is optimized and more efficient for heavy read loads, while Cassandra is better for heavy write loads.
-- Precomputed report data retrieve service - a microservice that receives advanced reports from MongoDB. The Facade Service and the Precomputed Report Data Retrieve Service are separated because it contributes to modularity, scalability, and facilitates independent maintenance and upgrade of microservices.
+- Scheduled report compute service 
+  - Uses Apache Spark connected to Cassandra Cluster to generate advanced data reports every hour.
+  - Apache Spark is chosen because it is optimized for heavy and advanced data processing that is impossible with Cassandra alone.
+  - Stores advanced reports in MongoDB.
+  - MongoDB (rather than Cassandra) is chosen here because MongoDB is optimized and more efficient for heavy read loads, while Cassandra is better for heavy write loads.
+- Precomputed report data retrieve service
+  - It is a microservice that receives advanced reports from MongoDB.
+  - The Facade Service and the Precomputed Report Data Retrieve Service are separated because it contributes to modularity, scalability, and facilitates independent maintenance and upgrade of microservices.
 
 Part B:
-- Streaming (live) data retrieve service -  
-  The service responsible for getting the latest data from the Cassandra Cluster.  
-  Since sum trades last n minutes and top n cryptos last hour have a specific behavior (necessary in trading), namely, they return the result excluding the data of the last minute (since it is not yet considered "closed"), then these queries and responses are cached using Hazelcast.  
-  Thus, the unnecessary load on the Cassandra Cluster is reduced and the speed of operation is increased, which is quite critical, since Part B is a highly loaded (with a possible large number of requests from clients).  
-<br><br>
-  Facade Service and Streaming (live) data retrieve service exchange data based on the Publish-Subscribe pattern. That is, there is one queue where Facade Service clients send the necessary requests, one of the free Streaming (live) data retrieve microservices processes it and returns a response to the Hazelcast Topic, which was previously defined and provided together with the Facade Service client.  
-  The Publish-Subscribe pattern is used to reduce latency during the internal interaction of microservices - since, in the case of HTTP, you need to constantly establish and stop connections, this implementation can avoid this.  
-  This microservice can be scaled as simply and quickly as possible by launching additional instances of the microservice.  
+- Streaming (live) data retrieve service
+  - The service responsible for getting the latest data from the Cassandra Cluster.  
+  - Since sum trades last n minutes and top n cryptos last hour have a specific behavior (necessary in trading), namely, they return the result excluding the data of the last minute (since it is not yet considered "closed"), then these queries and responses are cached using Hazelcast.  
+    Thus, the unnecessary load on the Cassandra Cluster is reduced and the speed of operation is increased, which is quite critical, since Part B is a highly loaded (with a possible large number of requests from clients).  
+  - Facade Service and Streaming (live) data retrieve service exchange data are based on the Publish-Subscribe pattern. That is, there is one queue where Facade Service clients send the necessary requests, one of the free Streaming (live) data retrieve microservices processes it and returns a response to the Hazelcast Topic, which was previously defined and provided together with the Facade Service client.  
+  - The Publish-Subscribe pattern is used to reduce latency during the internal interaction of microservices - since, in the case of HTTP, you need to constantly establish and stop connections, this implementation can avoid this.  
+  - This microservice can be scaled as simply and quickly as possible by launching additional instances of the microservice.  
 
 - Facade Service - provides an HTTP Rest API to the client. You can find example requests [here](facade_service/Requests.http).
 
@@ -42,6 +50,130 @@ Part B: A set of REST APIs that will return the results of ad-hoc queries. User 
 3. Return the cryptocurrency’s current price for «Buy» and «Sell» sides based on its symbol.
 
 **You can find example requests [here - facade_service/Requests.http](facade_service/Requests.http)**
+
+## Data models
+### Cassandra
+The data is stored in the same format, as received from the Bitmex exchange websocket. This data was considered as the most optimal for further processing and analysis, and no additional transformations need to be done.
+```cassandraql
+CREATE TABLE IF NOT EXISTS tradeBin1m (
+    timestamp TIMESTAMP,
+    symbol TEXT,
+    open DOUBLE,
+    high DOUBLE,
+    low DOUBLE,
+    close DOUBLE,
+    trades BIGINT,
+    volume DOUBLE,
+    lastSize DOUBLE,
+    turnover DOUBLE,
+    homeNotional DOUBLE,
+    foreignNotional DOUBLE,
+    PRIMARY KEY (symbol, timestamp)
+);
+
+CREATE TABLE IF NOT EXISTS quote (
+    timestamp TIMESTAMP,
+    symbol TEXT,
+    bidSize BIGINT,
+    bidPrice DOUBLE,
+    askPrice DOUBLE,
+    askSize BIGINT,
+    PRIMARY KEY (symbol, timestamp)
+);
+```
+### MongoDB
+The data is stored in the following format for each specified report:
+```json
+# hourly_transactions
+[
+    {
+      "symbol": "XBTUSD",
+      "hour": 14,
+      "transaction_count": 7359
+    },
+        ...
+    {
+      "symbol": "ETHUSD",
+      "hour": 15,
+      "transaction_count": 2146
+    },
+    {
+      "symbol": "ETHUSD",
+      "hour": 14,
+      "transaction_count": 1577
+    }
+]
+
+# total_volume_foreignNotional and total_volume_homeNotional
+[
+    {
+      "symbol": "XBTUSD",
+      "total_volume": 108424100.0
+    },
+    {
+      "symbol": "ETHUSD",
+      "total_volume": 12182156.518077983
+    },
+        ...
+]
+
+# hourly_trades_volume
+[
+    {
+      "hour": 15,
+      "trade_count": 16222,
+      "total_volume": 43904053.3212963
+    },
+    {
+      "hour": 14,
+      "trade_count": 15309,
+      "total_volume": 34597847.73764679
+    },
+        ...
+]
+```
+
+### Output data (REST API)
+Live data retrieve service returns the following data:
+```json
+# sum_trades_last_n_minutes
+{
+  "symbol": "XBTUSD",
+  "total_trades": 168,
+  "start_timestamp": "2024-05-06T17:20:00",
+  "end_timestamp": "2024-05-06T17:25:00"
+}
+
+# top_n_cryptos_last_hour
+{
+  "top_cryptos": {
+    "XBTUSD": 13836200.0,
+    "XBTUSDT": 1403192.889,
+    "ETHUSD": 1123946.4544920032,
+    "XRPUSD": 428559.96834503894,
+    "SOLUSD": 285567.21252443903
+  },
+  "volume_type": "foreignNotional",
+  "start_timestamp": "2024-05-06T16:25:00",
+  "end_timestamp": "2024-05-06T17:25:00"
+}
+
+# get_latest_prices
+{
+  "symbol": "XBTUSD",
+  "bidPrice": 63272.5,
+  "askPrice": 63273.0,
+  "timestamp": "2024-05-06T17:25:43.711000"
+}
+```
+Precomputed report data retrieve service returns the following data (retrieved from MongoDB):
+```json
+{
+  "report_date": "2024-05-06T17:25:43.711000",
+  "report_name": "name",
+  "data": [...]
+}
+```
 
 ## 🖥 Usage
 
