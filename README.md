@@ -255,7 +255,8 @@ sudo docker-compose -f facade_service/docker-compose.yml build --no-cache
 - sheduled_report_compute_service: 8001
 - precomputed_report_data_retrieve_service: 8002
 - ws_live_data_retrieve_service: 8003
-- live_data_retrieve_service: 8004 - 8006
+- live_data_retrieve_service: 8004 - 8006  
+
 and other services ports
 - Hazelcast: 5701
 - Hazelcast Management Center: 8180
